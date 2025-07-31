@@ -151,114 +151,187 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
             margin-bottom: 2rem;
+            padding: 1rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
-        .product-card:nth-child(odd) {
+        .product-card:nth-child(6n+1) {
+            transform: translateY(30px);
+        }
+
+        .product-card:nth-child(6n+2) {
+            transform: translateY(60px);
+        }
+
+        .product-card:nth-child(6n+3) {
             transform: translateY(20px);
         }
 
-        .product-card:nth-child(3n) {
+        .product-card:nth-child(6n+4) {
+            transform: translateY(80px);
+        }
+
+        .product-card:nth-child(6n+5) {
             transform: translateY(40px);
         }
 
-        .product-card:nth-child(5n) {
-            transform: translateY(-10px);
+        .product-card:nth-child(6n+6) {
+            transform: translateY(10px);
         }
 
         .product-card:hover {
-            transform: translateY(-10px) !important;
+            transform: translateY(-15px) scale(1.02) !important;
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 25px 25px 0 0;
         }
 
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-image-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .product-card:hover .product-image {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            opacity: 0;
+        }
+
+        .product-card:hover .product-image-hover {
+            opacity: 1;
+            transform: scale(1.1);
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .product-name {
             font-family: 'Tomorrow', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: #2d3748;
+            line-height: 1.3;
         }
 
         .product-description {
             color: #718096;
             font-size: 0.9rem;
             margin-bottom: 1rem;
-            line-height: 1.4;
+            line-height: 1.5;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            color: #ffd700;
+            font-size: 1rem;
+        }
+
+        .star.empty {
+            color: #e2e8f0;
+        }
+
+        .rating-text {
+            color: #718096;
+            font-size: 0.85rem;
         }
 
         .product-price {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #667eea;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .product-actions {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .add-to-cart-btn {
             flex: 1;
-            background: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 0.75rem;
-            border-radius: 10px;
+            padding: 1rem;
+            border-radius: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .add-to-cart-btn:hover {
-            background: #5a67d8;
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
         .wishlist-btn {
             background: rgba(0, 0, 0, 0.05);
             border: none;
-            padding: 0.75rem;
-            border-radius: 10px;
+            padding: 1rem;
+            border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 45px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
         }
 
         .wishlist-btn:hover {
             background: rgba(231, 76, 60, 0.1);
             color: #e74c3c;
+            transform: translateY(-2px);
         }
 
         .popular-badge {
@@ -326,18 +399,34 @@
             }
 
             .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+                padding: 0.5rem;
             }
 
-            .product-card:nth-child(odd),
-            .product-card:nth-child(3n),
-            .product-card:nth-child(5n) {
+            .product-card:nth-child(6n+1),
+            .product-card:nth-child(6n+2),
+            .product-card:nth-child(6n+3),
+            .product-card:nth-child(6n+4),
+            .product-card:nth-child(6n+5),
+            .product-card:nth-child(6n+6) {
                 transform: none;
+            }
+
+            .product-card:hover {
+                transform: translateY(-10px) scale(1.01) !important;
             }
 
             .marketplace-container {
                 padding: 1rem;
+            }
+
+            .product-info {
+                padding: 1.5rem;
+            }
+
+            .product-image-container {
+                height: 240px;
             }
         }
 
@@ -414,8 +503,11 @@
                 description: "Holographic space-themed sticker perfect for laptops and water bottles",
                 price: "$4.99",
                 image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop",
+                hoverImage: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&h=450&fit=crop",
                 category: "holographic",
-                badge: "popular"
+                badge: "popular",
+                rating: 4.8,
+                reviews: 127
             },
             {
                 id: 2,
@@ -423,8 +515,11 @@
                 description: "Beautiful die-cut rose design with premium vinyl finish",
                 price: "$3.49",
                 image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+                hoverImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=450&fit=crop",
                 category: "die-cut",
-                badge: "new"
+                badge: "new",
+                rating: 4.5,
+                reviews: 89
             },
             {
                 id: 3,
@@ -432,8 +527,11 @@
                 description: "Glowing circuit board pattern with holographic effects",
                 price: "$5.99",
                 image: "https://images.unsplash.com/photo-1518709594023-6eab9bec3411?w=400&h=300&fit=crop",
+                hoverImage: "https://images.unsplash.com/photo-1518709594023-6eab9bec3411?w=600&h=450&fit=crop",
                 category: "holographic",
-                badge: "popular"
+                badge: "popular",
+                rating: 4.9,
+                reviews: 203
             },
             {
                 id: 4,
@@ -441,7 +539,10 @@
                 description: "Outdoor-themed vinyl sticker for adventure enthusiasts",
                 price: "$2.99",
                 image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
-                category: "vinyl"
+                hoverImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=450&fit=crop",
+                category: "vinyl",
+                rating: 4.3,
+                reviews: 67
             },
             {
                 id: 5,
@@ -449,7 +550,10 @@
                 description: "Vibrant circular sticker with gradient rainbow colors",
                 price: "$1.99",
                 image: "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&h=300&fit=crop",
-                category: "circle"
+                hoverImage: "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=600&h=450&fit=crop",
+                category: "circle",
+                rating: 4.6,
+                reviews: 156
             },
             {
                 id: 6,
@@ -457,8 +561,11 @@
                 description: "Clean square design perfect for branding and marketing",
                 price: "$6.99",
                 image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
+                hoverImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=450&fit=crop",
                 category: "square",
-                badge: "new"
+                badge: "new",
+                rating: 4.7,
+                reviews: 94
             },
             {
                 id: 7,
@@ -466,7 +573,10 @@
                 description: "Mesmerizing space pattern with holographic finish",
                 price: "$4.49",
                 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=400&h=300&fit=crop",
-                category: "holographic"
+                hoverImage: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=450&fit=crop",
+                category: "holographic",
+                rating: 4.4,
+                reviews: 112
             },
             {
                 id: 8,
@@ -474,7 +584,10 @@
                 description: "80s-inspired die-cut sticker with vibrant colors",
                 price: "$3.99",
                 image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
-                category: "die-cut"
+                hoverImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=450&fit=crop",
+                category: "die-cut",
+                rating: 4.2,
+                reviews: 78
             },
             {
                 id: 9,
@@ -482,8 +595,11 @@
                 description: "Flowing wave design in premium vinyl material",
                 price: "$2.49",
                 image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop",
+                hoverImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600&h=450&fit=crop",
                 category: "vinyl",
-                badge: "popular"
+                badge: "popular",
+                rating: 4.8,
+                reviews: 189
             },
             {
                 id: 10,
@@ -491,7 +607,10 @@
                 description: "Modern geometric design in perfect circle shape",
                 price: "$3.29",
                 image: "https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=300&fit=crop",
-                category: "circle"
+                hoverImage: "https://images.unsplash.com/photo-1557683316-973673baf926?w=600&h=450&fit=crop",
+                category: "circle",
+                rating: 4.5,
+                reviews: 134
             },
             {
                 id: 11,
@@ -499,7 +618,10 @@
                 description: "Developer-themed square sticker with binary code pattern",
                 price: "$4.79",
                 image: "https://images.unsplash.com/photo-1515378791036-0648a814c963?w=400&h=300&fit=crop",
-                category: "square"
+                hoverImage: "https://images.unsplash.com/photo-1515378791036-0648a814c963?w=600&h=450&fit=crop",
+                category: "square",
+                rating: 4.6,
+                reviews: 145
             },
             {
                 id: 12,
@@ -507,8 +629,11 @@
                 description: "Stunning holographic crystal design that changes with light",
                 price: "$7.99",
                 image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+                hoverImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=450&fit=crop",
                 category: "holographic",
-                badge: "new"
+                badge: "new",
+                rating: 4.9,
+                reviews: 167
             }
         ];
 
@@ -517,13 +642,36 @@
         function createProductCard(product) {
             const badgeHtml = product.badge ? `<div class="${product.badge}-badge">${product.badge}</div>` : '';
             
+            // Generate stars based on rating
+            const fullStars = Math.floor(product.rating);
+            const hasHalfStar = product.rating % 1 >= 0.5;
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            
+            let starsHtml = '';
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += '<span class="star">★</span>';
+            }
+            if (hasHalfStar) {
+                starsHtml += '<span class="star">☆</span>';
+            }
+            for (let i = 0; i < emptyStars; i++) {
+                starsHtml += '<span class="star empty">☆</span>';
+            }
+            
             return `
                 <div class="product-card" data-category="${product.category}">
                     ${badgeHtml}
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                        <img src="${product.hoverImage}" alt="${product.name}" class="product-image-hover">
+                    </div>
                     <div class="product-info">
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
+                        <div class="product-rating">
+                            <div class="stars">${starsHtml}</div>
+                            <span class="rating-text">${product.rating} (${product.reviews} reviews)</span>
+                        </div>
                         <div class="product-price">${product.price}</div>
                         <div class="product-actions">
                             <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
@@ -589,7 +737,10 @@
                     description: "Electric die-cut design with metallic finish",
                     price: "$3.79",
                     image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=300&fit=crop",
-                    category: "die-cut"
+                    hoverImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=450&fit=crop",
+                    category: "die-cut",
+                    rating: 4.4,
+                    reviews: 98
                 },
                 {
                     id: 14,
@@ -597,8 +748,34 @@
                     description: "Spectacular holographic rainbow effect sticker",
                     price: "$6.49",
                     image: "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&h=300&fit=crop",
+                    hoverImage: "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=600&h=450&fit=crop",
                     category: "holographic",
-                    badge: "popular"
+                    badge: "popular",
+                    rating: 4.7,
+                    reviews: 176
+                },
+                {
+                    id: 15,
+                    name: "Forest Adventure",
+                    description: "Nature-inspired vinyl sticker with forest elements",
+                    price: "$4.29",
+                    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+                    hoverImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=450&fit=crop",
+                    category: "vinyl",
+                    rating: 4.5,
+                    reviews: 123
+                },
+                {
+                    id: 16,
+                    name: "Minimalist Circle",
+                    description: "Clean and simple circular design with elegant typography",
+                    price: "$2.79",
+                    image: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=400&h=300&fit=crop",
+                    hoverImage: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&h=450&fit=crop",
+                    category: "circle",
+                    badge: "new",
+                    rating: 4.3,
+                    reviews: 87
                 }
             ];
             
