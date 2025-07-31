@@ -8653,33 +8653,42 @@
                       <div
                         id="canvas-drop-zone"
                         style="
-                          background: rgba(255, 255, 255, 0.95);
-                          border-radius: 8px;
-                          border: 2px dashed rgba(59, 130, 246, 0.3);
-                          padding: 16px;
-                          margin-bottom: 16px;
-                          min-height: 280px;
+                          background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
+                          border-radius: 12px;
+                          border: 3px dashed rgba(59, 130, 246, 0.4);
+                          padding: 24px;
+                          margin-bottom: 20px;
+                          min-height: 420px;
                           display: flex;
                           flex-direction: column;
                           align-items: center;
                           justify-content: center;
                           position: relative;
-                          transition: all 0.3s ease;
-                          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+                          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                          box-shadow: 
+                            inset 0 4px 8px rgba(0, 0, 0, 0.06),
+                            0 8px 32px rgba(59, 130, 246, 0.1);
+                          cursor: pointer;
                         "
+                        onmouseover="this.style.borderColor='rgba(59, 130, 246, 0.6)'; this.style.background='linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 0.98))'; this.style.transform='translateY(-2px)'"
+                        onmouseout="this.style.borderColor='rgba(59, 130, 246, 0.4)'; this.style.background='linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95))'; this.style.transform='translateY(0)'"
                       >
                         <canvas
                           id="image-canvas"
-                          width="400"
-                          height="250"
+                          width="700"
+                          height="500"
                           style="
-                            border: 1px solid rgba(59, 130, 246, 0.2);
-                            border-radius: 4px;
-                            background: #ffffff;
+                            border: 2px solid rgba(59, 130, 246, 0.3);
+                            border-radius: 8px;
+                            background: linear-gradient(135deg, #ffffff, #f8fafc);
                             max-width: 100%;
                             height: auto;
                             display: none;
-                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                            box-shadow: 
+                              0 4px 16px rgba(0, 0, 0, 0.12),
+                              0 2px 8px rgba(59, 130, 246, 0.2);
+                            cursor: grab;
+                            transition: all 0.3s ease;
                           "
                         ></canvas>
 
@@ -8688,283 +8697,31 @@
                           id="drop-placeholder"
                           style="
                             text-align: center;
-                            color: rgba(75, 85, 99, 0.7);
+                            color: rgba(75, 85, 99, 0.8);
                             pointer-events: none;
+                            padding: 40px 20px;
                           "
                         >
-                          <svg
+                          <div
                             style="
-                              width: 48px;
-                              height: 48px;
-                              margin-bottom: 16px;
-                              opacity: 0.6;
-                              color: #3b82f6;
-                            "
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                            />
-                          </svg>
-                          <p
-                            style="
-                              margin: 0 0 8px 0;
-                              font-size: 16px;
-                              font-weight: 500;
-                              color: #374151;
-                            "
-                          >
-                            Drag & Drop Your Image Here
-                          </p>
-                          <p
-                            style="
-                              margin: 0;
-                              font-size: 14px;
-                              opacity: 0.6;
-                              color: #6b7280;
-                            "
-                          >
-                            or click the upload button below
-                          </p>
-                        </div>
-                      </div>
-
-                      <!-- Transform Tools (Initially Hidden) -->
-                      <div
-                        id="transform-tools"
-                        style="
-                          display: none;
-                          background: rgba(255, 255, 255, 0.05);
-                          border-radius: 8px;
-                          padding: 16px;
-                          margin-bottom: 16px;
-                          border: 1px solid rgba(255, 255, 255, 0.1);
-                        "
-                      >
-                        <h4
-                          style="
-                            margin: 0 0 12px 0;
-                            color: #333;
-                            font-size: 14px;
-                            font-weight: 600;
-                          "
-                        >
-                          Transform Tools
-                        </h4>
-                        <div
-                          style="
-                            display: grid;
-                            grid-template-columns: repeat(
-                              auto-fit,
-                              minmax(120px, 1fr)
-                            );
-                            gap: 8px;
-                          "
-                        >
-                          <button
-                            onclick="rotateImage(-90)"
-                            style="
-                              background: rgba(34, 197, 94, 0.2);
-                              border: 1px solid rgba(34, 197, 94, 0.4);
-                              color: rgba(34, 197, 94, 0.9);
-                              padding: 8px 12px;
-                              border-radius: 6px;
-                              cursor: pointer;
-                              transition: all 0.2s;
-                              font-size: 12px;
+                              background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+                              border-radius: 50%;
+                              width: 80px;
+                              height: 80px;
                               display: flex;
                               align-items: center;
                               justify-content: center;
-                              gap: 6px;
+                              margin: 0 auto 24px auto;
+                              border: 2px solid rgba(59, 130, 246, 0.2);
                             "
                           >
                             <svg
-                              style="width: 14px; height: 14px"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M4.5 15.75l-1.5-1.5L4.5 12.75m0 3h15m-15 0v-3m15 0l1.5 1.5-1.5 1.5m0-3H4.5m15 0v3"
-                              />
-                            </svg>
-                            Rotate Left
-                          </button>
-                          <button
-                            onclick="rotateImage(90)"
-                            style="
-                              background: rgba(34, 197, 94, 0.2);
-                              border: 1px solid rgba(34, 197, 94, 0.4);
-                              color: rgba(34, 197, 94, 0.9);
-                              padding: 8px 12px;
-                              border-radius: 6px;
-                              cursor: pointer;
-                              transition: all 0.2s;
-                              font-size: 12px;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              gap: 6px;
-                            "
-                          >
-                            <svg
-                              style="width: 14px; height: 14px"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19.5 15.75l1.5-1.5-1.5-1.5m0 3H4.5m15 0v-3M4.5 12.75L3 11.25l1.5-1.5m0 3v3m0-3h15"
-                              />
-                            </svg>
-                            Rotate Right
-                          </button>
-                          <button
-                            onclick="flipImage('horizontal')"
-                            style="
-                              background: rgba(168, 85, 247, 0.2);
-                              border: 1px solid rgba(168, 85, 247, 0.4);
-                              color: rgba(168, 85, 247, 0.9);
-                              padding: 8px 12px;
-                              border-radius: 6px;
-                              cursor: pointer;
-                              transition: all 0.2s;
-                              font-size: 12px;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              gap: 6px;
-                            "
-                          >
-                            <svg
-                              style="width: 14px; height: 14px"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                              />
-                            </svg>
-                            Flip H
-                          </button>
-                          <button
-                            onclick="flipImage('vertical')"
-                            style="
-                              background: rgba(168, 85, 247, 0.2);
-                              border: 1px solid rgba(168, 85, 247, 0.4);
-                              color: rgba(168, 85, 247, 0.9);
-                              padding: 8px 12px;
-                              border-radius: 6px;
-                              cursor: pointer;
-                              transition: all 0.2s;
-                              font-size: 12px;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              gap: 6px;
-                            "
-                          >
-                            <svg
-                              style="width: 14px; height: 14px"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M7 16V4m0 0L3 8m4-4l4 4m6 8v-2a4 4 0 00-4-4H4"
-                              />
-                            </svg>
-                            Flip V
-                          </button>
-                        </div>
-
-                        <!-- Scale Controls -->
-                        <div style="margin-top: 12px">
-                          <label
-                            style="
-                              display: block;
-                              color: #333;
-                              font-size: 12px;
-                              font-weight: 500;
-                              margin-bottom: 6px;
-                            "
-                            >Scale: <span id="scale-value">100%</span></label
-                          >
-                          <input
-                            type="range"
-                            id="scale-slider"
-                            min="25"
-                            max="200"
-                            value="100"
-                            style="
-                              width: 100%;
-                              height: 4px;
-                              background: rgba(255, 255, 255, 0.2);
-                              border-radius: 2px;
-                              outline: none;
-                            "
-                            oninput="scaleImage(this.value)"
-                          />
-                        </div>
-                      </div>
-
-                      <!-- Upload Controls -->
-                      <div
-                        style="display: flex; flex-direction: column; gap: 12px"
-                      >
-                        <input
-                          type="file"
-                          id="canvas-file-input"
-                          accept="image/*"
-                          style="display: none"
-                          onchange="handleCanvasImageUpload(event)"
-                        />
-
-                        <div style="display: flex; gap: 8px">
-                          <button
-                            onclick="document.getElementById('canvas-file-input').click()"
-                            style="
-                              flex: 1;
-                              background: linear-gradient(
-                                90deg,
-                                rgba(59, 130, 246, 0.2),
-                                rgba(147, 51, 234, 0.2)
-                              );
-                              border: 1px solid rgba(59, 130, 246, 0.5);
-                              color: #333;
-                              padding: 12px 16px;
-                              border-radius: 8px;
-                              cursor: pointer;
-                              transition: all 0.3s ease;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              gap: 8px;
-                              font-weight: 500;
-                            "
-                            onmouseover="this.style.background='linear-gradient(90deg, rgba(59,130,246,0.3), rgba(147,51,234,0.3))'; this.style.transform='scale(1.02)'"
-                            onmouseout="this.style.background='linear-gradient(90deg, rgba(59,130,246,0.2), rgba(147,51,234,0.2))'; this.style.transform='scale(1)'"
-                          >
-                            <svg
-                              style="width: 16px; height: 16px"
+                              style="
+                                width: 40px;
+                                height: 40px;
+                                color: #3b82f6;
+                                filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+                              "
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -8976,25 +8733,111 @@
                                 d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                               />
                             </svg>
-                            Upload Image
-                          </button>
-
-                          <button
-                            onclick="clearCanvas()"
+                          </div>
+                          <h4
                             style="
-                              background: rgba(239, 68, 68, 0.2);
-                              border: 1px solid rgba(239, 68, 68, 0.5);
-                              color: rgba(239, 68, 68, 0.8);
+                              margin: 0 0 12px 0;
+                              font-size: 20px;
+                              font-weight: 600;
+                              color: #1f2937;
+                              letter-spacing: -0.5px;
+                            "
+                          >
+                            Drop Your Design Here
+                          </h4>
+                          <p
+                            style="
+                              margin: 0 0 8px 0;
+                              font-size: 16px;
+                              color: #6b7280;
+                              line-height: 1.5;
+                            "
+                          >
+                            Drag and drop your image or click upload below
+                          </p>
+                          <p
+                            style="
+                              margin: 0;
+                              font-size: 14px;
+                              color: #9ca3af;
+                              font-weight: 500;
+                            "
+                          >
+                            Supports JPG, PNG, GIF • Max 10MB
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- Transform Tools (Initially Hidden) -->
+                      <div
+                        id="transform-tools"
+                        style="
+                          display: none;
+                          background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+                          border-radius: 12px;
+                          padding: 20px;
+                          margin-bottom: 20px;
+                          border: 1px solid rgba(59, 130, 246, 0.2);
+                          box-shadow: 
+                            0 8px 32px rgba(0, 0, 0, 0.08),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                          backdrop-filter: blur(8px);
+                        "
+                      >
+                        <h4
+                          style="
+                            margin: 0 0 16px 0;
+                            color: #1f2937;
+                            font-size: 16px;
+                            font-weight: 700;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                          "
+                        >
+                          <svg
+                            style="width: 18px; height: 18px; color: #3b82f6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
+                            />
+                          </svg>
+                          Transform & Control Tools
+                        </h4>
+                        <div
+                          style="
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                            gap: 12px;
+                            margin-bottom: 20px;
+                          "
+                        >
+                          <button
+                            onclick="rotateImage(-90)"
+                            style="
+                              background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.25));
+                              border: 2px solid rgba(34, 197, 94, 0.3);
+                              color: rgba(34, 197, 94, 1);
                               padding: 12px 16px;
-                              border-radius: 8px;
+                              border-radius: 10px;
                               cursor: pointer;
-                              transition: all 0.3s ease;
+                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                              font-size: 13px;
+                              font-weight: 600;
                               display: flex;
                               align-items: center;
                               justify-content: center;
+                              gap: 8px;
+                              box-shadow: 0 4px 16px rgba(34, 197, 94, 0.2);
                             "
-                            onmouseover="this.style.background='rgba(239,68,68,0.3)'; this.style.transform='scale(1.02)'"
-                            onmouseout="this.style.background='rgba(239,68,68,0.2)'; this.style.transform='scale(1)'"
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.25), rgba(34, 197, 94, 0.35))'; this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 6px 20px rgba(34, 197, 94, 0.3)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.25))'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 16px rgba(34, 197, 94, 0.2)'"
                           >
                             <svg
                               style="width: 16px; height: 16px"
@@ -9005,7 +8848,302 @@
                               <path
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                stroke-width="2"
+                                stroke-width="2.5"
+                                d="M4.5 15.75l-1.5-1.5L4.5 12.75m0 3h15m-15 0v-3m15 0l1.5 1.5-1.5 1.5m0-3H4.5m15 0v3"
+                              />
+                            </svg>
+                            Rotate Left
+                          </button>
+                          <button
+                            onclick="rotateImage(90)"
+                            style="
+                              background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.25));
+                              border: 2px solid rgba(34, 197, 94, 0.3);
+                              color: rgba(34, 197, 94, 1);
+                              padding: 12px 16px;
+                              border-radius: 10px;
+                              cursor: pointer;
+                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                              font-size: 13px;
+                              font-weight: 600;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              gap: 8px;
+                              box-shadow: 0 4px 16px rgba(34, 197, 94, 0.2);
+                            "
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.25), rgba(34, 197, 94, 0.35))'; this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 6px 20px rgba(34, 197, 94, 0.3)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.25))'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 16px rgba(34, 197, 94, 0.2)'"
+                          >
+                            <svg
+                              style="width: 16px; height: 16px"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.5"
+                                d="M19.5 15.75l1.5-1.5-1.5-1.5m0 3H4.5m15 0v-3M4.5 12.75L3 11.25l1.5-1.5m0 3v3m0-3h15"
+                              />
+                            </svg>
+                            Rotate Right
+                          </button>
+                          <button
+                            onclick="flipImage('horizontal')"
+                            style="
+                              background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25));
+                              border: 2px solid rgba(168, 85, 247, 0.3);
+                              color: rgba(168, 85, 247, 1);
+                              padding: 12px 16px;
+                              border-radius: 10px;
+                              cursor: pointer;
+                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                              font-size: 13px;
+                              font-weight: 600;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              gap: 8px;
+                              box-shadow: 0 4px 16px rgba(168, 85, 247, 0.2);
+                            "
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.35))'; this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 6px 20px rgba(168, 85, 247, 0.3)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25))'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 16px rgba(168, 85, 247, 0.2)'"
+                          >
+                            <svg
+                              style="width: 16px; height: 16px"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.5"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                              />
+                            </svg>
+                            Flip H
+                          </button>
+                          <button
+                            onclick="flipImage('vertical')"
+                            style="
+                              background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25));
+                              border: 2px solid rgba(168, 85, 247, 0.3);
+                              color: rgba(168, 85, 247, 1);
+                              padding: 12px 16px;
+                              border-radius: 10px;
+                              cursor: pointer;
+                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                              font-size: 13px;
+                              font-weight: 600;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              gap: 8px;
+                              box-shadow: 0 4px 16px rgba(168, 85, 247, 0.2);
+                            "
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.35))'; this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 6px 20px rgba(168, 85, 247, 0.3)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25))'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 16px rgba(168, 85, 247, 0.2)'"
+                          >
+                            <svg
+                              style="width: 16px; height: 16px"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.5"
+                                d="M7 16V4m0 0L3 8m4-4l4 4m6 8v-2a4 4 0 00-4-4H4"
+                              />
+                            </svg>
+                            Flip V
+                          </button>
+                        </div>
+
+                        <!-- Scale Controls -->
+                        <div style="margin-top: 16px">
+                          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <label
+                              style="
+                                color: #1f2937;
+                                font-size: 14px;
+                                font-weight: 600;
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                              "
+                            >
+                              <svg
+                                style="width: 16px; height: 16px; color: #6366f1"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10h-3m0 0H7m3 0v3m0-3V7"
+                                />
+                              </svg>
+                              Scale: <span id="scale-value" style="color: #3b82f6; font-weight: 700;">100%</span>
+                            </label>
+                            <div style="display: flex; gap: 8px;">
+                              <button
+                                onclick="quickScale(50)"
+                                style="
+                                  background: rgba(59, 130, 246, 0.1);
+                                  border: 1px solid rgba(59, 130, 246, 0.3);
+                                  color: #3b82f6;
+                                  padding: 4px 8px;
+                                  border-radius: 6px;
+                                  font-size: 11px;
+                                  font-weight: 600;
+                                  cursor: pointer;
+                                  transition: all 0.2s;
+                                "
+                                onmouseover="this.style.background='rgba(59, 130, 246, 0.2)'"
+                                onmouseout="this.style.background='rgba(59, 130, 246, 0.1)'"
+                              >50%</button>
+                              <button
+                                onclick="quickScale(100)"
+                                style="
+                                  background: rgba(59, 130, 246, 0.1);
+                                  border: 1px solid rgba(59, 130, 246, 0.3);
+                                  color: #3b82f6;
+                                  padding: 4px 8px;
+                                  border-radius: 6px;
+                                  font-size: 11px;
+                                  font-weight: 600;
+                                  cursor: pointer;
+                                  transition: all 0.2s;
+                                "
+                                onmouseover="this.style.background='rgba(59, 130, 246, 0.2)'"
+                                onmouseout="this.style.background='rgba(59, 130, 246, 0.1)'"
+                              >100%</button>
+                              <button
+                                onclick="quickScale(150)"
+                                style="
+                                  background: rgba(59, 130, 246, 0.1);
+                                  border: 1px solid rgba(59, 130, 246, 0.3);
+                                  color: #3b82f6;
+                                  padding: 4px 8px;
+                                  border-radius: 6px;
+                                  font-size: 11px;
+                                  font-weight: 600;
+                                  cursor: pointer;
+                                  transition: all 0.2s;
+                                "
+                                onmouseover="this.style.background='rgba(59, 130, 246, 0.2)'"
+                                onmouseout="this.style.background='rgba(59, 130, 246, 0.1)'"
+                              >150%</button>
+                            </div>
+                          </div>
+                          <input
+                            type="range"
+                            id="scale-slider"
+                            min="10"
+                            max="300"
+                            value="100"
+                            style="
+                              width: 100%;
+                              height: 6px;
+                              background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+                              border-radius: 3px;
+                              outline: none;
+                              cursor: pointer;
+                              -webkit-appearance: none;
+                              appearance: none;
+                            "
+                            oninput="scaleImage(this.value)"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Upload Controls -->
+                      <div
+                        style="display: flex; flex-direction: column; gap: 16px"
+                      >
+                        <input
+                          type="file"
+                          id="canvas-file-input"
+                          accept="image/*"
+                          style="display: none"
+                          onchange="handleCanvasImageUpload(event)"
+                        />
+
+                        <div style="display: flex; gap: 12px">
+                          <button
+                            onclick="document.getElementById('canvas-file-input').click()"
+                            style="
+                              flex: 1;
+                              background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(147, 51, 234, 0.15));
+                              border: 2px solid rgba(59, 130, 246, 0.4);
+                              color: #1f2937;
+                              padding: 16px 20px;
+                              border-radius: 12px;
+                              cursor: pointer;
+                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              gap: 10px;
+                              font-weight: 600;
+                              font-size: 15px;
+                              box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+                            "
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(59,130,246,0.25), rgba(147,51,234,0.25))'; this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 8px 24px rgba(59, 130, 246, 0.3)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(59,130,246,0.15), rgba(147,51,234,0.15))'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 16px rgba(59, 130, 246, 0.2)'"
+                          >
+                            <svg
+                              style="width: 20px; height: 20px"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.5"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                              />
+                            </svg>
+                            Upload Image
+                          </button>
+
+                          <button
+                            onclick="clearCanvas()"
+                            style="
+                              background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.25));
+                              border: 2px solid rgba(239, 68, 68, 0.4);
+                              color: rgba(239, 68, 68, 1);
+                              padding: 16px 20px;
+                              border-radius: 12px;
+                              cursor: pointer;
+                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-weight: 600;
+                              box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2);
+                            "
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(239,68,68,0.25), rgba(239,68,68,0.35))'; this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 8px 24px rgba(239, 68, 68, 0.3)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(239,68,68,0.15), rgba(239,68,68,0.25))'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 16px rgba(239, 68, 68, 0.2)'"
+                          >
+                            <svg
+                              style="width: 18px; height: 18px"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.5"
                                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                               />
                             </svg>
@@ -9014,22 +9152,24 @@
                           <button
                             onclick="downloadCanvas()"
                             style="
-                              background: rgba(16, 185, 129, 0.2);
-                              border: 1px solid rgba(16, 185, 129, 0.5);
-                              color: rgba(16, 185, 129, 0.9);
-                              padding: 12px 16px;
-                              border-radius: 8px;
+                              background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.25));
+                              border: 2px solid rgba(16, 185, 129, 0.4);
+                              color: rgba(16, 185, 129, 1);
+                              padding: 16px 20px;
+                              border-radius: 12px;
                               cursor: pointer;
-                              transition: all 0.3s ease;
+                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                               display: flex;
                               align-items: center;
                               justify-content: center;
+                              font-weight: 600;
+                              box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
                             "
-                            onmouseover="this.style.background='rgba(16,185,129,0.3)'; this.style.transform='scale(1.02)'"
-                            onmouseout="this.style.background='rgba(16,185,129,0.2)'; this.style.transform='scale(1)'"
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(16,185,129,0.25), rgba(16,185,129,0.35))'; this.style.transform='translateY(-2px) scale(1.02)'; this.style.boxShadow='0 8px 24px rgba(16, 185, 129, 0.3)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.25))'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 16px rgba(16, 185, 129, 0.2)'"
                           >
                             <svg
-                              style="width: 16px; height: 16px"
+                              style="width: 18px; height: 18px"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -9037,7 +9177,7 @@
                               <path
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                stroke-width="2"
+                                stroke-width="2.5"
                                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                               />
                             </svg>
@@ -9360,7 +9500,13 @@
                 scaleX: 1,
                 scaleY: 1,
                 scale: 1,
+                offsetX: 0,
+                offsetY: 0,
               };
+              
+              let isDragging = false;
+              let lastMouseX = 0;
+              let lastMouseY = 0;
 
               function handleCanvasImageUpload(event) {
                 const file = event.target.files[0];
@@ -9390,6 +9536,7 @@
                 const placeholder = document.getElementById("drop-placeholder");
                 canvas.style.display = "block";
                 placeholder.style.display = "none";
+                setupCanvasInteraction();
               }
 
               function hideCanvas() {
@@ -9415,6 +9562,8 @@
                   scaleX: 1,
                   scaleY: 1,
                   scale: 1,
+                  offsetX: 0,
+                  offsetY: 0,
                 };
                 const scaleSlider = document.getElementById("scale-slider");
                 const scaleValue = document.getElementById("scale-value");
@@ -9435,7 +9584,7 @@
                 ctx.save();
 
                 // Move to center for transformations
-                ctx.translate(canvas.width / 2, canvas.height / 2);
+                ctx.translate(canvas.width / 2 + imageTransforms.offsetX, canvas.height / 2 + imageTransforms.offsetY);
 
                 // Apply transformations
                 ctx.rotate((imageTransforms.rotation * Math.PI) / 180);
@@ -9451,10 +9600,10 @@
                 let drawWidth, drawHeight;
 
                 if (imageRatio > canvasRatio) {
-                  drawWidth = canvas.width * 0.9;
+                  drawWidth = canvas.width * 0.8;
                   drawHeight = drawWidth / imageRatio;
                 } else {
-                  drawHeight = canvas.height * 0.9;
+                  drawHeight = canvas.height * 0.8;
                   drawWidth = drawHeight * imageRatio;
                 }
 
@@ -9521,6 +9670,84 @@
                 link.click();
               }
 
+              // Quick scale function for preset buttons
+              function quickScale(value) {
+                const slider = document.getElementById("scale-slider");
+                const scaleValue = document.getElementById("scale-value");
+                slider.value = value;
+                scaleImage(value);
+              }
+
+              // Enhanced panning functionality
+              function setupCanvasInteraction() {
+                const canvas = document.getElementById("image-canvas");
+                
+                // Mouse events for panning
+                canvas.addEventListener("mousedown", function(e) {
+                  if (!currentImage) return;
+                  isDragging = true;
+                  canvas.style.cursor = "grabbing";
+                  const rect = canvas.getBoundingClientRect();
+                  lastMouseX = e.clientX - rect.left;
+                  lastMouseY = e.clientY - rect.top;
+                });
+
+                canvas.addEventListener("mousemove", function(e) {
+                  if (!isDragging || !currentImage) return;
+                  const rect = canvas.getBoundingClientRect();
+                  const mouseX = e.clientX - rect.left;
+                  const mouseY = e.clientY - rect.top;
+                  
+                  const deltaX = mouseX - lastMouseX;
+                  const deltaY = mouseY - lastMouseY;
+                  
+                  imageTransforms.offsetX += deltaX;
+                  imageTransforms.offsetY += deltaY;
+                  
+                  drawImageToCanvas();
+                  
+                  lastMouseX = mouseX;
+                  lastMouseY = mouseY;
+                });
+
+                canvas.addEventListener("mouseup", function() {
+                  isDragging = false;
+                  canvas.style.cursor = "grab";
+                });
+
+                canvas.addEventListener("mouseleave", function() {
+                  isDragging = false;
+                  canvas.style.cursor = "grab";
+                });
+
+                // Mouse wheel zoom
+                canvas.addEventListener("wheel", function(e) {
+                  if (!currentImage) return;
+                  e.preventDefault();
+                  
+                  const delta = e.deltaY < 0 ? 1.1 : 0.9;
+                  const newScale = Math.max(0.1, Math.min(3, imageTransforms.scale * delta));
+                  
+                  imageTransforms.scale = newScale;
+                  const slider = document.getElementById("scale-slider");
+                  const scaleValue = document.getElementById("scale-value");
+                  const scalePercent = Math.round(newScale * 100);
+                  
+                  slider.value = scalePercent;
+                  scaleValue.textContent = scalePercent + "%";
+                  
+                  drawImageToCanvas();
+                });
+
+                // Double click to reset position
+                canvas.addEventListener("dblclick", function() {
+                  if (!currentImage) return;
+                  imageTransforms.offsetX = 0;
+                  imageTransforms.offsetY = 0;
+                  drawImageToCanvas();
+                });
+              }
+
               // Drag and Drop functionality
               function setupDragAndDrop() {
                 const dropZone = document.getElementById("canvas-drop-zone");
@@ -9528,32 +9755,47 @@
                 dropZone.addEventListener("dragover", function (e) {
                   e.preventDefault();
                   dropZone.style.borderColor = "rgba(59,130,246,0.8)";
-                  dropZone.style.backgroundColor = "rgba(59,130,246,0.08)";
-                  dropZone.style.transform = "scale(1.02)";
+                  dropZone.style.background = "linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))";
+                  dropZone.style.transform = "translateY(-4px) scale(1.02)";
+                  dropZone.style.boxShadow = "0 12px 40px rgba(59, 130, 246, 0.25), inset 0 4px 8px rgba(0, 0, 0, 0.06)";
                 });
 
                 dropZone.addEventListener("dragleave", function (e) {
                   e.preventDefault();
-                  dropZone.style.borderColor = "rgba(59,130,246,0.3)";
-                  dropZone.style.backgroundColor = "rgba(255,255,255,0.95)";
-                  dropZone.style.transform = "scale(1)";
+                  dropZone.style.borderColor = "rgba(59,130,246,0.4)";
+                  dropZone.style.background = "linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95))";
+                  dropZone.style.transform = "translateY(0) scale(1)";
+                  dropZone.style.boxShadow = "inset 0 4px 8px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(59, 130, 246, 0.1)";
                 });
 
                 dropZone.addEventListener("drop", function (e) {
                   e.preventDefault();
-                  dropZone.style.borderColor = "rgba(59,130,246,0.3)";
-                  dropZone.style.backgroundColor = "rgba(255,255,255,0.95)";
-                  dropZone.style.transform = "scale(1)";
+                  dropZone.style.borderColor = "rgba(34, 197, 94, 0.6)";
+                  dropZone.style.background = "linear-gradient(145deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1))";
+                  dropZone.style.transform = "translateY(0) scale(1)";
+                  
+                  // Briefly show success state
+                  setTimeout(() => {
+                    dropZone.style.borderColor = "rgba(59,130,246,0.4)";
+                    dropZone.style.background = "linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95))";
+                  }, 500);
 
                   const files = e.dataTransfer.files;
                   if (files.length > 0) {
                     const file = files[0];
-                    if (file.type.startsWith("image/")) {
+                    if (file.type.startsWith("image/") && file.size <= 10 * 1024 * 1024) {
                       processImageFile(file);
+                    } else if (file.size > 10 * 1024 * 1024) {
+                      alert("File size must be less than 10MB");
                     } else {
-                      alert("Please drop an image file");
+                      alert("Please drop an image file (JPG, PNG, GIF)");
                     }
                   }
+                });
+
+                // Make the entire drop zone clickable
+                dropZone.addEventListener("click", function() {
+                  document.getElementById('canvas-file-input').click();
                 });
               }
 
