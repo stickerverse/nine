@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Stickerine</title>
+    <link rel="stylesheet" href="assets/auth-styles.css">
+    <link rel="stylesheet" href="assets/profile-styles.css">
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/header-navigation.css">
+  </head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="assets/stickerverse-logo.png" alt="Stickerverse Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/collections/stickers.html">Stickers</a></li>
+                    <li><a href="/design.html">Design</a></li>
+                    <li><a href="/design-tips.html">Tips</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-sidebar">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img id="user-avatar" src="assets/default-avatar.png" alt="User Avatar">
+                </div>
+                <h2 id="user-name">Loading...</h2>
+                <p id="user-email">loading@example.com</p>
+            </div>
+            
+            <nav class="profile-nav">
+                <ul>
+                    <li class="active"><a href="#account" data-section="account">Account Info</a></li>
+                    <li><a href="#orders" data-section="orders">My Orders</a></li>
+                    <li><a href="#designs" data-section="designs">Saved Designs</a></li>
+                    <li><a href="#addresses" data-section="addresses">Addresses</a></li>
+                    <li><a href="#payment-methods" data-section="payment-methods">Payment Methods</a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-outline">Sign Out</button>
+            </div>
+        </div>
+        
+        <div class="profile-content">
+            <!-- Account Info Section -->
+            <section id="account-section" class="profile-section active">
+                <h1>Account Information</h1>
+                
+                <form id="account-form" class="profile-form">
+                    <div class="form-group">
+                        <label for="profile-name">Full Name</label>
+                        <input type="text" id="profile-name" name="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" name="email" disabled>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profile-phone">Phone Number</label>
+                            <input type="tel" id="profile-phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profile-birthday">Birthday</label>
+                            <input type="date" id="profile-birthday" name="birthday">
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </div>
+                </form>
+                
+                <div class="section-divider"></div>
+                
+                <h2>Change Password</h2>
+                <form id="password-form" class="profile-form">
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" name="current-password">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" name="new-password">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-new-password">Confirm New Password</label>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </div>
+                </form>
+            </section>
+            
+            <!-- Orders Section -->
+            <section id="orders-section" class="profile-section">
+                <h1>My Orders</h1>
+                
+                <div class="orders-list" id="orders-list">
+                    <div class="loading-spinner">Loading orders...</div>
+                </div>
+                
+                <div class="empty-state" id="no-orders" style="display: none;">
+                    <img src="assets/empty-orders.svg" alt="No Orders">
+                    <h2>No Orders Yet</h2>
+                    <p>You haven't placed any orders yet. Start shopping now!</p>
+                    <a href="/collections/stickers.html" class="btn btn-primary">Shop Now</a>
+                </div>
+            </section>
+            
+            <!-- Saved Designs Section -->
+            <section id="designs-section" class="profile-section">
+                <h1>Saved Designs</h1>
+                
+                <div class="designs-grid" id="designs-grid">
+                    <div class="loading-spinner">Loading designs...</div>
+                </div>
+                
+                <div class="empty-state" id="no-designs" style="display: none;">
+                    <img src="assets/empty-designs.svg" alt="No Designs">
+                    <h2>No Saved Designs</h2>
+                    <p>You haven't saved any custom designs yet.</p>
+                    <a href="/design.html" class="btn btn-primary">Create a Design</a>
+                </div>
+            </section>
+            
+            <!-- Addresses Section -->
+            <section id="addresses-section" class="profile-section">
+                <h1>My Addresses</h1>
+                
+                <div class="addresses-list" id="addresses-list"></div>
+                
+                <button id="add-address-btn" class="btn btn-outline">Add New Address</button>
+                
+                <div class="address-form-container" id="address-form-container" style="display: none;">
+                    <h2 id="address-form-title">Add New Address</h2>
+                    <form id="address-form" class="profile-form">
+                        <input type="hidden" id="address-id" name="address-id">
+                        
+                        <div class="form-group">
+                            <label for="address-name">Address Name</label>
+                            <input type="text" id="address-name" name="address-name" placeholder="e.g. Home, Work, etc.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address-line1">Address Line 1</label>
+                            <input type="text" id="address-line1" name="address-line1" placeholder="Street address, P.O. box, company name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address-line2">Address Line 2</label>
+                            <input type="text" id="address-line2" name="address-line2" placeholder="Apartment, suite, unit, building, floor, etc.">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="address-city">City</label>
+                                <input type="text" id="address-city" name="address-city">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address-state">State/Province</label>
+                                <input type="text" id="address-state" name="address-state">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="address-zip">Zip/Postal Code</label>
+                                <input type="text" id="address-zip" name="address-zip">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address-country">Country</label>
+                                <select id="address-country" name="address-country">
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <!-- More countries can be added -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="address-default" name="address-default">
+                            <label for="address-default">Set as default shipping address</label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Address</button>
+                            <button type="button" class="btn btn-outline" id="cancel-address-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            
+            <!-- Payment Methods Section -->
+            <section id="payment-methods-section" class="profile-section">
+                <h1>Payment Methods</h1>
+                
+                <div class="payment-methods-list" id="payment-methods-list"></div>
+                
+                <button id="add-payment-btn" class="btn btn-outline">Add Payment Method</button>
+                
+                <div class="payment-form-container" id="payment-form-container" style="display: none;">
+                    <h2 id="payment-form-title">Add Payment Method</h2>
+                    <form id="payment-form" class="profile-form">
+                        <div class="form-group">
+                            <label for="card-holder">Card Holder Name</label>
+                            <input type="text" id="card-holder" name="card-holder">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <div class="card-input-container">
+                                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+                                <div class="card-icons">
+                                    <img src="assets/visa.svg" alt="Visa">
+                                    <img src="assets/mastercard.svg" alt="Mastercard">
+                                    <img src="assets/amex.svg" alt="American Express">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Expiration Date</label>
+                                <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="card-cvc">CVC</label>
+                                <input type="text" id="card-cvc" name="card-cvc" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="payment-default" name="payment-default">
+                            <label for="payment-default">Set as default payment method</label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Payment Method</button>
+                            <button type="button" class="btn btn-outline" id="cancel-payment-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Stickerine</h3>
+                <ul>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <li><a href="/blogs/news.html">Blog</a></li>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="/collections/stickers.html">All Stickers</a></li>
+                    <li><a href="/products/die-cut-stickers.html">Die Cut Stickers</a></li>
+                    <li><a href="/products/circle-stickers.html">Circle Stickers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="/pages/faq.html">FAQ</a></li>
+                    <li><a href="/pages/shipping.html">Shipping</a></li>
+                    <li><a href="/pages/returns.html">Returns</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/policies/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/policies/privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stickerine. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Profile Scripts -->
+    <script src="assets/firebase-auth.js"></script>
+    <script src="assets/profile.js"></script>
+  <script src="assets/header-navigation.js"></script>
+  </body>
+</html>

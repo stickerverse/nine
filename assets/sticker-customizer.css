@@ -1,0 +1,317 @@
+/* Sticker Customizer Styles */
+.sticker-customizer {
+  margin: 30px 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.sticker-customizer__title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.sticker-customizer__preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .sticker-customizer__preview-container {
+    flex-direction: row;
+  }
+}
+
+.sticker-customizer__preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.sticker-customizer__preview-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.sticker-customizer__preview-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.sticker-customizer__preview-image img.placeholder {
+  opacity: 0.5;
+}
+
+.sticker-customizer__die-cut-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sticker-customizer__preview-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sticker-customizer__controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sticker-customizer__control-group {
+  margin-bottom: 20px;
+}
+
+.sticker-customizer__control-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.sticker-customizer__help-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Shape options */
+.sticker-customizer__shape-options,
+.sticker-customizer__material-options,
+.sticker-customizer__radio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sticker-customizer__option {
+  position: relative;
+  margin: 0;
+}
+
+.sticker-customizer__option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sticker-customizer__option-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.sticker-customizer__option input[type="radio"]:checked + .sticker-customizer__option-content {
+  border-color: #000;
+  background-color: #f0f0f0;
+}
+
+/* Material icons */
+.sticker-customizer__material-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.sticker-customizer__material-icon.vinyl {
+  background-color: #fff;
+}
+
+.sticker-customizer__material-icon.holographic {
+  background: linear-gradient(45deg, #f3f3f3, #c1e3ff, #ffcfe0, #fffdc1);
+}
+
+.sticker-customizer__material-icon.transparent {
+  background-color: transparent;
+  position: relative;
+}
+.sticker-customizer__material-icon.transparent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 4px, transparent 4px, transparent 8px);
+  border-radius: 50%;
+}
+
+.sticker-customizer__material-icon.glitter {
+  background-color: #f0f0f0;
+  position: relative;
+}
+.sticker-customizer__material-icon.glitter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #c1c1c1 1px, transparent 1px);
+  background-size: 4px 4px;
+  border-radius: 50%;
+}
+
+.sticker-customizer__material-icon.mirror {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 50%, #c0c0c0 100%);
+}
+
+/* Select styling */
+.sticker-customizer__select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sticker-customizer__select {
+  display: block;
+  padding: 8px 30px 8px 10px;
+  width: 100%;
+  max-width: 200px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  appearance: none;
+}
+
+.sticker-customizer__select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+  pointer-events: none;
+}
+
+/* Custom size inputs */
+.sticker-customizer__custom-size-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sticker-customizer__input {
+  width: 70px;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.sticker-customizer__dimension-separator {
+  font-size: 16px;
+}
+
+.sticker-customizer__dimension-unit {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Quantity pricing */
+.sticker-customizer__option-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 120px;
+}
+
+.sticker-customizer__price {
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.sticker-customizer__discount {
+  background-color: #e3f2fd;
+  color: #2196F3;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Action buttons */
+.sticker-customizer__actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.sticker-customizer__add-button {
+  flex: 2;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.sticker-customizer__upload-button {
+  flex: 1;
+}
+
+/* Button Styles */
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.button--primary {
+  background-color: #ffd200;
+  color: #000;
+}
+
+.button--primary:hover {
+  background-color: #f0c800;
+}
+
+.button--secondary {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.button--secondary:hover {
+  background-color: #f5f5f5;
+}

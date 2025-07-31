@@ -1,0 +1,140 @@
+/* Simple Slim Header Navigation */
+.header .header__inline-navigation .elastic-tabs {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: #000000 !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid #333333 !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  max-width: 800px !important;
+  height: 50px !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs {
+  display: flex !important;
+  position: relative !important;
+  background: transparent !important;
+  border-radius: 6px !important;
+  padding: 4px !important;
+  gap: 4px !important;
+  border: none !important;
+  z-index: 2 !important;
+  height: 100% !important;
+  align-items: center !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 20px !important;
+  text-decoration: none !important;
+  color: #cccccc !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+  z-index: 1 !important;
+  background: transparent !important;
+  border: none !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a.active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #1d4ed8) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a i {
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  margin-right: 0 !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a:hover i {
+  transform: scale(1.1) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a.active i {
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs .selector {
+  position: absolute !important;
+  top: 4px !important;
+  left: 4px !important;
+  width: 0 !important;
+  height: calc(100% - 8px) !important;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #1d4ed8) !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+  z-index: 0 !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Remove all the space-themed effects */
+.header .header__inline-navigation .elastic-tabs::before,
+.header .header__inline-navigation .elastic-tabs::after {
+  display: none !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a::before,
+.header .header__inline-navigation .elastic-tabs .tabs a::after {
+  display: none !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs .selector::before {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .header .header__inline-navigation .elastic-tabs {
+    padding: 6px !important;
+    height: 45px !important;
+  }
+  
+  .header .header__inline-navigation .elastic-tabs .tabs {
+    padding: 3px !important;
+    gap: 3px !important;
+  }
+  
+  .header .header__inline-navigation .elastic-tabs .tabs a {
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    gap: 6px !important;
+  }
+  
+  .header .header__inline-navigation .elastic-tabs .tabs a i {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .header__inline-navigation .elastic-tabs {
+    display: none !important;
+  }
+}
+
+/* Override any existing styles that might interfere */
+.header .header__inline-navigation .header__linklist {
+  display: none !important;
+}
+
+.header .header__inline-navigation .elastic-tabs {
+  display: flex !important;
+} 

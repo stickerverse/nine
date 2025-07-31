@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Reviews';
+  src: url("../fonts/reviews.woff2") format('woff2'),
+  url("../fonts/reviews.woff") format('woff'),
+  url("../fonts/reviews.ttf") format('ttf'),
+  url("../reviews.otf") format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+

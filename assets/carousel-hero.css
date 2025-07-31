@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Hero carousel container */
+.hero-carousel {
+  margin: 0;
+  background-color: #1a1a1a;
+  color: #FFFFFFDD;
+  position: relative;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  min-height: 600px;
+}
+
+.card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FFFFFFDD;
+  padding-left: 16px;
+}
+
+.content-place {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.content-title-1,
+.content-title-2 {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+}
+
+.content-start {
+  width: 30px;
+  height: 5px;
+  border-radius: 99px;
+  background-color: #FFFFFFDD;
+}
+
+.details {
+  z-index: 22;
+  position: absolute;
+  top: 240px;
+  left: 60px;
+}
+
+.details .place-box {
+  height: 46px;
+  overflow: hidden;
+}
+
+.details .place-box .text {
+  padding-top: 16px;
+  font-size: 20px;
+}
+
+.details .place-box .text:before {
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 4px;
+  border-radius: 99px;
+  background-color: white;
+}
+
+.details .title-1,
+.details .title-2 {
+  font-weight: 600;
+  font-size: 72px;
+  font-family: "Oswald", sans-serif;
+}
+
+.details .title-box-1,
+.details .title-box-2 {
+  margin-top: 2px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.details > .desc {
+  margin-top: 16px;
+  width: 500px;
+}
+
+.details > .cta {
+  width: 500px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.details > .cta > .bookmark {
+  border: none;
+  background-color: #ff0000;
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+
+.details > .cta > .star {
+  border: none;
+  background-color: #ffbf00;
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+
+.details > .cta > .bookmark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.details > .cta > .discover {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  height: 36px;
+  border-radius: 99px;
+  color: #ffffff;
+  padding: 4px 24px;
+  font-size: 12px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.details > .cta > .discover:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Navigation styles */
+.hero-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 36px;
+  font-weight: 500;
+}
+
+.hero-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-nav .svg-container {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-nav > div {
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.hero-nav > div:first-child {
+  gap: 10px;
+}
+
+.hero-nav > div:last-child {
+  gap: 24px;
+}
+
+.hero-nav > div:last-child > .active {
+  position: relative;
+}
+
+.hero-nav > div:last-child > .active:after {
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  content: "";
+  height: 3px;
+  border-radius: 99px;
+  background-color: #ff0000;
+}
+
+.indicator {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8px;
+  z-index: 60;
+  background-color: #ff0000;
+}
+
+.pagination {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: inline-flex;
+}
+
+.pagination > .arrow {
+  z-index: 60;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid #ffffff55;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination > .arrow:hover {
+  border-color: #ffffff99;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pagination > .arrow:nth-child(2) {
+  margin-left: 20px;
+}
+
+.pagination > .arrow svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+  color: #ffffff99;
+}
+
+.pagination .progress-sub-container {
+  margin-left: 24px;
+  z-index: 60;
+  width: 500px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.pagination .progress-sub-container .progress-sub-background {
+  width: 500px;
+  height: 3px;
+  background-color: #ffffff33;
+}
+
+.pagination .progress-sub-container .progress-sub-background .progress-sub-foreground {
+  height: 3px;
+  background-color: #ff0000;
+}
+
+.pagination .slide-numbers {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  z-index: 60;
+  position: relative;
+}
+
+.pagination .slide-numbers .item {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 100;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .hero-carousel {
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .details {
+    top: 180px;
+    left: 30px;
+  }
+  
+  .details .title-1,
+  .details .title-2 {
+    font-size: 48px;
+  }
+  
+  .details > .desc {
+    width: 300px;
+    font-size: 14px;
+  }
+  
+  .details > .cta {
+    width: 300px;
+  }
+  
+  .hero-nav {
+    padding: 15px 20px;
+  }
+  
+  .pagination .progress-sub-container {
+    width: 300px;
+  }
+  
+  .pagination .progress-sub-container .progress-sub-background {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-carousel {
+    height: 70vh;
+    min-height: 450px;
+  }
+  
+  .details {
+    top: 150px;
+    left: 20px;
+  }
+  
+  .details .title-1,
+  .details .title-2 {
+    font-size: 36px;
+  }
+  
+  .details > .desc {
+    width: 250px;
+    font-size: 13px;
+  }
+  
+  .details > .cta {
+    width: 250px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .details > .cta > .discover {
+    margin-left: 0;
+  }
+  
+  .pagination .progress-sub-container {
+    width: 200px;
+  }
+  
+  .pagination .progress-sub-container .progress-sub-background {
+    width: 200px;
+  }
+}

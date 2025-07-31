@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:s="http://jadedpixel.com/-/spec/shopify">
+  <id>https://stickerine.com/collections/all.atom</id>
+  <link rel="alternate" type="text/html" href="https://stickerine.com/collections/all"/>
+  <link rel="self" type="application/atom+xml" href="https://stickerine.com/collections/deals.atom"/>
+  <title>Stickerine.com</title>
+  <updated>2025-06-19T12:37:10-04:00</updated>
+  <author>
+    <name>Stickerine.com</name>
+  </author>
+  <entry>
+    <id>https://stickerine.com/products/8871813415150</id>
+    <published>2025-06-19T12:37:10-04:00</published>
+    <updated>2025-06-19T12:37:10-04:00</updated>
+    <link rel="alternate" type="text/html" href="https://stickerine.com/products/100-3-qr-code-custom-stickers"/>
+    <title>100 3&quot; QR Code Custom Stickers</title>
+    <s:type></s:type>
+    <s:vendor>Stickerine.com</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0742/7912/5230/files/Deal3_ceccf21d-1fb7-47ff-b6a0-35451420da22.png?v=1750351080"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Stickerine.com<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            59.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Create a personalized set of 100 custom 3-inch QR code stickers designed to direct your audience exactly where you want. Perfect for marketing, events, or product packaging, these durable stickers make it easy to share websites, promotions, or contact information with a simple scan. Provide your desired URL, and we’ll generate high-quality QR codes that enhance engagement and streamline access to your content.</p>
+<h2 id="tinymce_scroll_sign">Why Choose Custom Stickers?</h2>
+<p>These custom square vinyl stickers are perfect for showcasing your logo or design. Made with waterproof vinyl and die cut for a precise square shape, they are durable and eye-catching. Stand out with these high-quality stickers that are perfect for branding and promoting your business or personal message.</p>
+<h3>Perfect for Branding and Personalization</h3>
+<p>Custom square stickers are a great way to express your creativity and make an impact. Whether you're promoting your business or just want to personalize your belongings, these stickers offer endless possibilities. Because they come in various sizes and colors, you can easily find one that fits your needs. But don't forget, the quality of the material matters too, so always choose durable options.</p>
+<p></p>
+<h3>Durable and Versatile Materials</h3>
+<p>When it comes to custom square stickers, the materials used play a big role in their longevity. High-quality vinyl is often the go-to choice because it’s water-resistant and long-lasting. However, if you need something softer or more flexible, paper-based stickers might be better. So, depending on where you plan to use them, pick the right material for the job. This ensures your stickers stay vibrant and intact over time.</p>
+<p></p>
+<h3>Easy Ordering Process</h3>
+<p>Creating custom square stickers has never been easier. You can upload your design online, and within minutes, get a preview of how it will look. Because most websites offer user-friendly tools, even beginners can design their own stickers without hassle. But if you’re unsure about anything, customer support teams are always available to help. So whether you're ordering for yourself or your company, the process is smooth and stress-free.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>custom design</s:tag>
+    <s:tag>personalized stickers</s:tag>
+    <s:tag>square stickers</s:tag>
+    <s:tag>stickers</s:tag>
+    <s:tag>vinyl stickers</s:tag>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-Default Title</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku/>
+      <s:grams>227</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1750352683283</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1750359730487</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1750471366108</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1750771705762</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1751034857198</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1751243482486</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1751243617134</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871813415150</id>
+      <title>opc-1751243742372</title>
+      <s:price currency="USD">59.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://stickerine.com/products/8871802437870</id>
+    <published>2025-06-19T12:21:48-04:00</published>
+    <updated>2025-06-19T12:21:48-04:00</updated>
+    <link rel="alternate" type="text/html" href="https://stickerine.com/products/100-3-custom-holographic-stickers"/>
+    <title>100 3&quot; Custom Holographic Stickers</title>
+    <s:type></s:type>
+    <s:vendor>Stickerine.com</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0742/7912/5230/files/Deal6.png?v=1750350540"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Stickerine.com<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            69.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Receive 100 custom 3-inch holographic vinyl stickers crafted to your exact specifications. These premium stickers feature vibrant, eye-catching holographic effects combined with durable vinyl construction that resists fading and wear. Ideal for branding, marketing, or personal projects, they deliver a polished, professional look suitable for both indoor and outdoor use. This collection offers exceptional quality and value to enhance your promotional efforts or creative designs.</p>
+<h2 id="tinymce_scroll_sign">Why Choose Custom Stickers?</h2>
+<p>These custom square vinyl stickers are perfect for showcasing your logo or design. Made with waterproof vinyl and die cut for a precise square shape, they are durable and eye-catching. Stand out with these high-quality stickers that are perfect for branding and promoting your business or personal message.</p>
+<h3>Perfect for Branding and Personalization</h3>
+<p>Custom square stickers are a great way to express your creativity and make an impact. Whether you're promoting your business or just want to personalize your belongings, these stickers offer endless possibilities. Because they come in various sizes and colors, you can easily find one that fits your needs. But don't forget, the quality of the material matters too, so always choose durable options.</p>
+<p></p>
+<h3>Durable and Versatile Materials</h3>
+<p>When it comes to custom square stickers, the materials used play a big role in their longevity. High-quality vinyl is often the go-to choice because it’s water-resistant and long-lasting. However, if you need something softer or more flexible, paper-based stickers might be better. So, depending on where you plan to use them, pick the right material for the job. This ensures your stickers stay vibrant and intact over time.</p>
+<p></p>
+<h3>Easy Ordering Process</h3>
+<p>Creating custom square stickers has never been easier. You can upload your design online, and within minutes, get a preview of how it will look. Because most websites offer user-friendly tools, even beginners can design their own stickers without hassle. But if you’re unsure about anything, customer support teams are always available to help. So whether you're ordering for yourself or your company, the process is smooth and stress-free.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>custom design</s:tag>
+    <s:tag>personalized stickers</s:tag>
+    <s:tag>square stickers</s:tag>
+    <s:tag>stickers</s:tag>
+    <s:tag>vinyl stickers</s:tag>
+    <s:variant>
+      <id>https://stickerine.com/products/8871802437870</id>
+      <title>opc-Default Title</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku/>
+      <s:grams>227</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871802437870</id>
+      <title>opc-1750367346908</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871802437870</id>
+      <title>opc-1751137524309</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://stickerine.com/products/8871801618670</id>
+    <published>2025-06-19T12:20:36-04:00</published>
+    <updated>2025-06-19T12:20:36-04:00</updated>
+    <link rel="alternate" type="text/html" href="https://stickerine.com/products/200-2-5-custom-holographic-stickers"/>
+    <title>200 2.5&quot; Custom Holographic Stickers</title>
+    <s:type></s:type>
+    <s:vendor>Stickerine.com</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0742/7912/5230/files/Deal2.png?v=1750350286"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Stickerine.com<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            79.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Receive 200 custom 2.5-inch holographic vinyl stickers crafted to your exact specifications. These premium stickers feature vibrant, eye-catching holographic effects combined with durable vinyl construction that resists fading and wear. Ideal for branding, marketing, or personal projects, they deliver a polished, professional look suitable for both indoor and outdoor use. This collection offers exceptional quality and value to enhance your promotional efforts or creative designs.</p>
+<h2 id="tinymce_scroll_sign">Why Choose Custom Stickers?</h2>
+<p>These custom square vinyl stickers are perfect for showcasing your logo or design. Made with waterproof vinyl and die cut for a precise square shape, they are durable and eye-catching. Stand out with these high-quality stickers that are perfect for branding and promoting your business or personal message.</p>
+<h3>Perfect for Branding and Personalization</h3>
+<p>Custom square stickers are a great way to express your creativity and make an impact. Whether you're promoting your business or just want to personalize your belongings, these stickers offer endless possibilities. Because they come in various sizes and colors, you can easily find one that fits your needs. But don't forget, the quality of the material matters too, so always choose durable options.</p>
+<p><br></p>
+<h3>Durable and Versatile Materials</h3>
+<p>When it comes to custom square stickers, the materials used play a big role in their longevity. High-quality vinyl is often the go-to choice because it’s water-resistant and long-lasting. However, if you need something softer or more flexible, paper-based stickers might be better. So, depending on where you plan to use them, pick the right material for the job. This ensures your stickers stay vibrant and intact over time.</p>
+<p><br></p>
+<h3>Easy Ordering Process</h3>
+<p>Creating custom square stickers has never been easier. You can upload your design online, and within minutes, get a preview of how it will look. Because most websites offer user-friendly tools, even beginners can design their own stickers without hassle. But if you’re unsure about anything, customer support teams are always available to help. So whether you're ordering for yourself or your company, the process is smooth and stress-free.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>custom design</s:tag>
+    <s:tag>personalized stickers</s:tag>
+    <s:tag>square stickers</s:tag>
+    <s:tag>stickers</s:tag>
+    <s:tag>vinyl stickers</s:tag>
+    <s:variant>
+      <id>https://stickerine.com/products/8871801618670</id>
+      <title>opc-Default Title</title>
+      <s:price currency="USD">79.99</s:price>
+      <s:sku/>
+      <s:grams>227</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871801618670</id>
+      <title>opc-1750351903684</title>
+      <s:price currency="USD">79.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871801618670</id>
+      <title>opc-1750975148443</title>
+      <s:price currency="USD">79.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871801618670</id>
+      <title>opc-1750975258598</title>
+      <s:price currency="USD">79.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871801618670</id>
+      <title>opc-1751754856229</title>
+      <s:price currency="USD">79.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871801618670</id>
+      <title>opc-1752092181397</title>
+      <s:price currency="USD">79.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://stickerine.com/products/8871800832238</id>
+    <published>2025-06-19T12:17:57-04:00</published>
+    <updated>2025-06-19T12:17:57-04:00</updated>
+    <link rel="alternate" type="text/html" href="https://stickerine.com/products/200-2-custom-vinyl-stickers"/>
+    <title>200 2&quot; Custom Vinyl Stickers</title>
+    <s:type></s:type>
+    <s:vendor>Stickerine.com</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0742/7912/5230/files/Deal1.png?v=1750349986"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Stickerine.com<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            69.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Receive 200 custom 2-inch vinyl stickers tailored precisely to your needs. Made from premium vinyl, these stickers deliver vibrant colors and long-lasting durability, resisting fading and wear. Perfect for branding, marketing campaigns, or personal use, they maintain a sharp, professional appearance both indoors and outdoors. This pack offers excellent quality and value for your promotional or creative projects.</p>
+<h2 id="tinymce_scroll_sign">Why Choose Custom Stickers?</h2>
+<p>These custom square vinyl stickers are perfect for showcasing your logo or design. Made with waterproof vinyl and die cut for a precise square shape, they are durable and eye-catching. Stand out with these high-quality stickers that are perfect for branding and promoting your business or personal message.</p>
+<h3>Perfect for Branding and Personalization</h3>
+<p>Custom square stickers are a great way to express your creativity and make an impact. Whether you're promoting your business or just want to personalize your belongings, these stickers offer endless possibilities. Because they come in various sizes and colors, you can easily find one that fits your needs. But don't forget, the quality of the material matters too, so always choose durable options.</p>
+<p><br></p>
+<h3>Durable and Versatile Materials</h3>
+<p>When it comes to custom square stickers, the materials used play a big role in their longevity. High-quality vinyl is often the go-to choice because it’s water-resistant and long-lasting. However, if you need something softer or more flexible, paper-based stickers might be better. So, depending on where you plan to use them, pick the right material for the job. This ensures your stickers stay vibrant and intact over time.</p>
+<p><br></p>
+<h3>Easy Ordering Process</h3>
+<p>Creating custom square stickers has never been easier. You can upload your design online, and within minutes, get a preview of how it will look. Because most websites offer user-friendly tools, even beginners can design their own stickers without hassle. But if you’re unsure about anything, customer support teams are always available to help. So whether you're ordering for yourself or your company, the process is smooth and stress-free.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>custom design</s:tag>
+    <s:tag>personalized stickers</s:tag>
+    <s:tag>square stickers</s:tag>
+    <s:tag>stickers</s:tag>
+    <s:tag>vinyl stickers</s:tag>
+    <s:variant>
+      <id>https://stickerine.com/products/8871800832238</id>
+      <title>opc-Default Title</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku/>
+      <s:grams>227</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871800832238</id>
+      <title>opc-1751564304517</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871800832238</id>
+      <title>opc-1751592500649</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871800832238</id>
+      <title>opc-1752092342591</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871800832238</id>
+      <title>opc-1752092398510</title>
+      <s:price currency="USD">69.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://stickerine.com/products/8871172145390</id>
+    <published>2025-06-18T12:21:04-04:00</published>
+    <updated>2025-06-18T12:21:04-04:00</updated>
+    <link rel="alternate" type="text/html" href="https://stickerine.com/products/100-3-custom-vinyl-stickers"/>
+    <title>100 3&quot; Custom Vinyl Stickers</title>
+    <s:type></s:type>
+    <s:vendor>Stickerine.com</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0742/7912/5230/files/Deal5.png?v=1750349812"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Stickerine.com<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            49.99 - 70.00
+            <a href="https://stickerine.com/products/100-3-custom-vinyl-stickers">(11 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Get 100 custom 3-inch vinyl stickers designed to meet your exact specifications. Durable and vibrant, these stickers are perfect for branding, promotions, or personal projects. Crafted from high-quality vinyl, they resist fading and wear, ensuring your message stays clear and eye-catching. Ideal for indoor and outdoor use, these stickers offer professional-grade quality at a great value.</p>
+<h2 id="tinymce_scroll_sign">Why Choose Custom Stickers?</h2>
+<p>These custom square vinyl stickers are perfect for showcasing your logo or design. Made with waterproof vinyl and die cut for a precise square shape, they are durable and eye-catching. Stand out with these high-quality stickers that are perfect for branding and promoting your business or personal message.</p>
+<h3>Perfect for Branding and Personalization</h3>
+<p>Custom square stickers are a great way to express your creativity and make an impact. Whether you're promoting your business or just want to personalize your belongings, these stickers offer endless possibilities. Because they come in various sizes and colors, you can easily find one that fits your needs. But don't forget, the quality of the material matters too, so always choose durable options.</p>
+<p></p>
+<h3>Durable and Versatile Materials</h3>
+<p>When it comes to custom square stickers, the materials used play a big role in their longevity. High-quality vinyl is often the go-to choice because it’s water-resistant and long-lasting. However, if you need something softer or more flexible, paper-based stickers might be better. So, depending on where you plan to use them, pick the right material for the job. This ensures your stickers stay vibrant and intact over time.</p>
+<p></p>
+<h3>Easy Ordering Process</h3>
+<p>Creating custom square stickers has never been easier. You can upload your design online, and within minutes, get a preview of how it will look. Because most websites offer user-friendly tools, even beginners can design their own stickers without hassle. But if you’re unsure about anything, customer support teams are always available to help. So whether you're ordering for yourself or your company, the process is smooth and stress-free.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>custom design</s:tag>
+    <s:tag>personalized stickers</s:tag>
+    <s:tag>square stickers</s:tag>
+    <s:tag>stickers</s:tag>
+    <s:tag>vinyl stickers</s:tag>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-Default Title</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>227</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1750350344366</title>
+      <s:price currency="USD">70.00</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1750701990377</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1750970935499</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1751398293846</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1751422043588</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1751480524035</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1751484682997</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1751564510707</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1751728091263</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://stickerine.com/products/8871172145390</id>
+      <title>opc-1751990441758</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+</feed>

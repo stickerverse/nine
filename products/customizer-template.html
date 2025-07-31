@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Customizer Template</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    
+    <!-- Customizer CSS -->
+    <link rel="stylesheet" href="../assets/firebase-sticker-customizer.css">
+    
+    <!-- Template instructions -->
+    <!--
+    HOW TO USE THIS TEMPLATE:
+    
+    1. Include these scripts in the <head> of your product pages:
+       <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+       <script src="../assets/firebase-sticker-customizer.js"></script>
+       <link rel="stylesheet" href="../assets/firebase-sticker-customizer.css">
+    
+    2. Add this script at the end of the <body> of your product pages:
+       <script src="../assets/product-customizer-integration.js"></script>
+    
+    3. The product-customizer-integration.js script will automatically:
+       - Detect if the current page is a sticker product
+       - Replace the product media with the Firebase customizer
+    -->
+</head>
+<body>
+    <h1>Sticker Product Customizer Template</h1>
+    
+    <div class="template-info">
+        <h2>Implementation Guide</h2>
+        
+        <h3>1. Add to <code>&lt;head&gt;</code></h3>
+        <pre><code>
+&lt;!-- Firebase Sticker Customizer --&gt;
+&lt;script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/firebase-sticker-customizer.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="../assets/firebase-sticker-customizer.css"&gt;
+        </code></pre>
+        
+        <h3>2. Add to end of <code>&lt;body&gt;</code></h3>
+        <pre><code>
+&lt;script src="../assets/product-customizer-integration.js"&gt;&lt;/script&gt;
+        </code></pre>
+        
+        <h3>3. How it works</h3>
+        <p>
+            The integration script automatically detects if the current page is a sticker product
+            based on the product title or URL path. If it is, the script will replace the product media
+            with the Firebase sticker customizer iframe.
+        </p>
+        
+        <h3>4. Configuration</h3>
+        <p>
+            You can customize which products get the customizer by editing the <code>isCustomizableProduct</code>
+            check in the product-customizer-integration.js file.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* Vortex Effect Styles */
+.vortex-container {
+  position: relative;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  border-radius: 8px;
+  height: 30rem;
+  overflow: hidden;
+  background: #000000;
+}
+
+.vortex-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.vortex-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.vortex-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.vortex-description {
+  color: white;
+  font-size: 1rem;
+  max-width: 36rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.vortex-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vortex-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.vortex-button.primary {
+  background: #2563eb;
+  color: white;
+  box-shadow: inset 0 2px 0 0 rgba(255, 255, 255, 0.25);
+}
+
+.vortex-button.primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.vortex-button.secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.vortex-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .vortex-title {
+    font-size: 3.75rem;
+  }
+  
+  .vortex-description {
+    font-size: 1.5rem;
+  }
+  
+  .vortex-content {
+    padding: 1rem 2.5rem;
+  }
+  
+  .vortex-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vortex-container {
+    width: calc(100% - 2rem);
+    height: 25rem;
+  }
+  
+  .vortex-title {
+    font-size: 1.5rem;
+  }
+  
+  .vortex-description {
+    font-size: 0.875rem;
+  }
+} 

@@ -1,0 +1,290 @@
+/* Space-Themed Navigation - High Specificity Override */
+.header .header__inline-navigation .elastic-tabs {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 40, 0.9)) !important;
+  backdrop-filter: blur(20px) !important;
+  border-radius: 60px !important;
+  padding: 12px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(100, 150, 255, 0.2) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 0 auto !important;
+  max-width: 800px !important;
+}
+
+.header .header__inline-navigation .elastic-tabs::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(100, 150, 255, 0.1), transparent) !important;
+  animation: shimmer 3s infinite !important;
+  z-index: 1 !important;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs {
+  display: flex !important;
+  position: relative !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 50px !important;
+  padding: 6px !important;
+  gap: 6px !important;
+  border: 1px solid rgba(100, 150, 255, 0.1) !important;
+  z-index: 2 !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 14px 24px !important;
+  text-decoration: none !important;
+  color: #a0a0a0 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  border-radius: 40px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  white-space: nowrap !important;
+  z-index: 1 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, rgba(100, 150, 255, 0.1), rgba(150, 100, 255, 0.1)) !important;
+  border-radius: 40px !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  z-index: -1 !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, rgba(100, 150, 255, 0.2), rgba(150, 100, 255, 0.2)) !important;
+  border-radius: 40px !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  z-index: -2 !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  text-shadow: 0 0 10px rgba(100, 150, 255, 0.5) !important;
+  box-shadow: 
+    0 4px 20px rgba(100, 150, 255, 0.2),
+    0 0 0 1px rgba(100, 150, 255, 0.3) !important;
+  background: linear-gradient(135deg, rgba(100, 150, 255, 0.1), rgba(150, 100, 255, 0.1)) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a:hover::before {
+  opacity: 1 !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a.active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #4059e6, #6c5ce7, #a855f7) !important;
+  box-shadow: 
+    0 8px 25px rgba(64, 89, 230, 0.4),
+    0 0 0 1px rgba(100, 150, 255, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8) !important;
+  transform: translateY(-1px) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a.active::after {
+  opacity: 1 !important;
+  animation: pulse 2s infinite !important;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a i {
+  font-size: 16px !important;
+  transition: all 0.4s ease !important;
+  filter: drop-shadow(0 0 5px rgba(100, 150, 255, 0.3)) !important;
+  margin-right: 0 !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a:hover i {
+  transform: scale(1.2) rotate(5deg) !important;
+  filter: drop-shadow(0 0 10px rgba(100, 150, 255, 0.8)) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a.active i {
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) !important;
+  animation: iconGlow 2s infinite !important;
+}
+
+@keyframes iconGlow {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)); }
+  50% { filter: drop-shadow(0 0 25px rgba(100, 150, 255, 1)); }
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs .selector {
+  position: absolute !important;
+  top: 6px !important;
+  left: 6px !important;
+  width: 0 !important;
+  height: calc(100% - 12px) !important;
+  background: linear-gradient(135deg, #4059e6, #6c5ce7, #a855f7) !important;
+  border-radius: 40px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 0 !important;
+  box-shadow: 
+    0 4px 15px rgba(64, 89, 230, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs .selector::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent) !important;
+  border-radius: 40px !important;
+  animation: selectorShimmer 2s infinite !important;
+}
+
+@keyframes selectorShimmer {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Floating particles effect */
+.header .header__inline-navigation .elastic-tabs::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 2px !important;
+  height: 2px !important;
+  background: rgba(100, 150, 255, 0.6) !important;
+  border-radius: 50% !important;
+  animation: float 4s infinite ease-in-out !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translate(-50%, -50%) translateY(0px);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translate(-50%, -50%) translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Animation for tab switching */
+@keyframes tabSlide {
+  0% {
+    transform: scale(0.95) translateY(-2px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05) translateY(-3px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(-1px);
+    opacity: 1;
+  }
+}
+
+.header .header__inline-navigation .elastic-tabs .tabs a.active {
+  animation: tabSlide 0.5s ease-out !important;
+}
+
+/* Glow effect for active state */
+.header .header__inline-navigation .elastic-tabs .tabs a.active::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -2px !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  background: linear-gradient(135deg, #4059e6, #6c5ce7, #a855f7) !important;
+  border-radius: 42px !important;
+  z-index: -3 !important;
+  opacity: 0.3 !important;
+  animation: activeGlow 2s infinite !important;
+}
+
+@keyframes activeGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .header .header__inline-navigation .elastic-tabs {
+    padding: 10px !important;
+    border-radius: 50px !important;
+  }
+  
+  .header .header__inline-navigation .elastic-tabs .tabs {
+    padding: 5px !important;
+    gap: 4px !important;
+  }
+  
+  .header .header__inline-navigation .elastic-tabs .tabs a {
+    padding: 12px 20px !important;
+    font-size: 13px !important;
+    gap: 8px !important;
+  }
+  
+  .header .header__inline-navigation .elastic-tabs .tabs a i {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .header__inline-navigation .elastic-tabs {
+    display: none !important;
+  }
+}
+
+/* Override any existing styles that might interfere */
+.header .header__inline-navigation .header__linklist {
+  display: none !important;
+}
+
+.header .header__inline-navigation .elastic-tabs {
+  display: flex !important;
+} 

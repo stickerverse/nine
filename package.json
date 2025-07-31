@@ -1,0 +1,16 @@
+{
+  "name": "stickerine",
+  "version": "1.0.0",
+  "description": "Stickerine website with Firebase authentication and payment processing",
+  "main": "index.js",
+  "scripts": {
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "firebase": "^10.8.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.2"
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Customizer Placeholder</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#EEEEEE" x="0" y="0" width="200" height="200"></rect>
+        <g transform="translate(50, 50)" fill="#AAAAAA">
+            <path d="M80,40 C80,62.09 62.09,80 40,80 C17.91,80 0,62.09 0,40 C0,17.91 17.91,0 40,0 C62.09,0 80,17.91 80,40 Z M60,40 C60,51.05 51.05,60 40,60 C28.95,60 20,51.05 20,40 C20,28.95 28.95,20 40,20 C51.05,20 60,28.95 60,40 Z"></path>
+            <text font-family="Arial" font-size="14" x="40" y="85" text-anchor="middle" fill="#555555">Upload your design</text>
+        </g>
+    </g>
+</svg>

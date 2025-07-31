@@ -1,0 +1,80 @@
+/* Embedded SVG as Base64 */
+.sticker-customizer__preview-image img[src="/assets/customizer-placeholder.png"] {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjAwcHgiIGhlaWdodD0iMjAwcHgiIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPHRpdGxlPkN1c3RvbWl6ZXIgUGxhY2Vob2xkZXI8L3RpdGxlPgogICAgPGcgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHJlY3QgZmlsbD0iI0VFRUVFRSIgeD0iMCIgeT0iMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPjwvcmVjdD4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MCwgNzApIiBmaWxsPSIjQUFBQUFBIj4KICAgICAgICAgICAgPHBhdGggZD0iTTMwLDE1IEwzMCwwIEw0NSwwIEw0NSwxNSBMMzAsMTUgWiBNMCwwIEwxNSwwIEwxNSwxNSBMMCwxNSBMMCwwIFogTTE1LDAgTDMwLDAgTDMwLDE1IEwxNSwxNSBMMTUsMCBaIE0wLDE1IEwxNSwxNSBMMTUsMzAgTDAsMzAgTDAsMTUgWiBNMTUsMTUgTDMwLDE1IEwzMCwzMCBMMTUsMzAgTDE1LDE1IFogTTMwLDE1IEw0NSwxNSBMNDUsMzAgTDMwLDMwIEwzMCwxNSBaIE0wLDMwIEwxNSwzMCBMMTUsNDUgTDAsNDUgTDAsMzAgWiBNMTUsMzAgTDMwLDMwIEwzMCw0NSBMMTUsNDUgTDE1LDMwIFogTTMwLDMwIEw0NSwzMCBMNDUsNDUgTDMwLDQ1IEwzMCwzMCBaIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgeD0iMTAwIiB5PSIxMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM1NTU1NTUiPlVwbG9hZCB5b3VyIGRlc2lnbjwvdGV4dD4KICAgIDwvZz4KPC9zdmc+');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 80%;
+  height: 80%;
+}
+
+/* Additional styles to improve the customizer */
+.sticker-customizer {
+  margin-bottom: 30px;
+}
+
+.sticker-customizer__size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.sticker-customizer__size-option {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.sticker-customizer__size-option.active {
+  border-color: #FF5722;
+  background-color: rgba(255, 87, 34, 0.05);
+}
+
+/* Tooltip styles */
+.sticker-customizer__tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  cursor: help;
+}
+
+.sticker-customizer__tooltip-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #888;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sticker-customizer__tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.sticker-customizer__tooltip:hover .sticker-customizer__tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

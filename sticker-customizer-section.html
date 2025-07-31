@@ -1,0 +1,563 @@
+<!-- Sticker Customizer Section - Matching Screenshot Design -->
+<div id="sticker-customizer-section" class="shopify-section">
+  <div class="container">
+    <style>
+      .sticker-customizer-container {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      
+      .customizer-header {
+        margin-bottom: 30px;
+      }
+      
+      .customizer-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #333;
+        margin: 0 0 10px 0;
+        line-height: 1.2;
+      }
+      
+      .customizer-subtitle {
+        font-size: 16px;
+        color: #666;
+        margin: 0;
+        line-height: 1.4;
+      }
+      
+      .customizer-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        gap: 40px;
+        margin-top: 40px;
+      }
+      
+      /* Product Column */
+      .product-column h3,
+      .material-column h3,
+      .size-column h3,
+      .quantity-column h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 20px 0;
+      }
+      
+      /* Product Dropdown */
+      .product-select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: white;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+      
+      /* Shape Options */
+      .shape-options {
+        margin-top: 20px;
+      }
+      
+      .shape-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 15px 0;
+      }
+      
+      .shape-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .shape-option {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: white;
+      }
+      
+      .shape-option:hover {
+        border-color: #ccc;
+        background: #f9f9f9;
+      }
+      
+      .shape-option.selected {
+        background: #f0f0f0;
+        border-color: #999;
+      }
+      
+      .shape-option input[type="radio"] {
+        margin-right: 10px;
+        transform: scale(1.1);
+      }
+      
+      .shape-option label {
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        font-weight: 500;
+      }
+      
+      /* Material Grid */
+      .material-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      
+      .material-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: white;
+        text-align: center;
+      }
+      
+      .material-option:hover {
+        border-color: #bbb;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      
+      .material-option.selected {
+        border-color: #405de6;
+        background: #f8f9ff;
+      }
+      
+      .material-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      /* Material Specific Icons */
+      .material-vinyl { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); }
+      .material-holographic { background: linear-gradient(135deg, #ff6b9d, #c4b5fd, #60a5fa, #34d399); }
+      .material-transparent { 
+        background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                    linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                    linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                    linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+        background-size: 8px 8px;
+        background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+      }
+      .material-glitter { background: linear-gradient(135deg, #ffd700, #ffed4e, #fbbf24); }
+      .material-mirror { background: linear-gradient(135deg, #e5e7eb, #d1d5db, #9ca3af); }
+      .material-pixie { background: linear-gradient(135deg, #f3e8ff, #e9d5ff, #c4b5fd); }
+      
+      .material-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #333;
+      }
+      
+      /* Finish Dropdown */
+      .finish-select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        background-color: white;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      
+      /* Size & Quantity Tables */
+      .size-quantity-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      
+      .size-quantity-table th {
+        background: #f8f9fa;
+        padding: 12px 8px;
+        text-align: left;
+        font-weight: 600;
+        color: #333;
+        border-bottom: 2px solid #e9ecef;
+      }
+      
+      .size-quantity-table td {
+        padding: 12px 8px;
+        border-bottom: 1px solid #e9ecef;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      
+      .size-quantity-table tr:hover td {
+        background-color: #f8f9fa;
+      }
+      
+      .size-quantity-table tr.selected td {
+        background-color: #e3f2fd;
+        font-weight: 600;
+      }
+      
+      .quantity-column .size-quantity-table td:nth-child(2) {
+        font-weight: 600;
+        color: #333;
+      }
+      
+      .quantity-column .size-quantity-table td:nth-child(3) {
+        font-weight: 700;
+        color: #2d5aa0;
+      }
+      
+      .quantity-column .size-quantity-table td:nth-child(4) {
+        color: #059669;
+        font-weight: 600;
+      }
+      
+      /* Upload Button */
+      .upload-section {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 40px;
+      }
+      
+      .upload-button {
+        background: linear-gradient(135deg, #ffd60a, #fbbf24);
+        color: #1f2937;
+        border: none;
+        padding: 16px 48px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: none;
+        box-shadow: 0 4px 16px rgba(251, 191, 36, 0.3);
+      }
+      
+      .upload-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+        background: linear-gradient(135deg, #f59e0b, #f97316);
+      }
+      
+      /* Custom Size and Quantity Rows */
+      .custom-row {
+        color: #6b7280;
+        font-style: italic;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .customizer-content {
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+        
+        .size-column,
+        .quantity-column {
+          grid-column: span 1;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .customizer-content {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        
+        .material-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .customizer-title {
+          font-size: 28px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .sticker-customizer-container {
+          padding: 0 15px;
+          margin: 40px auto;
+        }
+        
+        .material-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .customizer-title {
+          font-size: 24px;
+        }
+      }
+    </style>
+    
+    <div class="sticker-customizer-container">
+      <div class="customizer-header">
+        <h1 class="customizer-title">Print customized stickers</h1>
+        <p class="customizer-subtitle">Choose your desired outline, size, quantity and material. Upload your design and go to our editor.</p>
+      </div>
+      
+      <div class="customizer-content">
+        <!-- Product Column -->
+        <div class="product-column">
+          <h3>Product</h3>
+          <select class="product-select" id="product-select">
+            <option value="die-cut-sticker">Die Cut Sticker</option>
+            <option value="circle-sticker">Circle Sticker</option>
+            <option value="square-sticker">Square Sticker</option>
+            <option value="holographic-sticker">Holographic Sticker</option>
+          </select>
+          
+          <div class="shape-options">
+            <h4 class="shape-title">Shape</h4>
+            <div class="shape-grid">
+              <div class="shape-option selected">
+                <input type="radio" name="shape" value="contour-cut" id="contour-cut" checked>
+                <label for="contour-cut">Contour Cut</label>
+              </div>
+              <div class="shape-option">
+                <input type="radio" name="shape" value="square" id="square">
+                <label for="square">Square</label>
+              </div>
+              <div class="shape-option">
+                <input type="radio" name="shape" value="circle" id="circle">
+                <label for="circle">Circle</label>
+              </div>
+              <div class="shape-option">
+                <input type="radio" name="shape" value="rounded-corners" id="rounded-corners">
+                <label for="rounded-corners">Rounded Corners</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Material Column -->
+        <div class="material-column">
+          <h3>Material</h3>
+          <div class="material-grid">
+            <div class="material-option selected" data-material="vinyl">
+              <div class="material-icon material-vinyl"></div>
+              <div class="material-label">Vinyl</div>
+            </div>
+            <div class="material-option" data-material="holographic">
+              <div class="material-icon material-holographic"></div>
+              <div class="material-label">Holographic</div>
+            </div>
+            <div class="material-option" data-material="transparent">
+              <div class="material-icon material-transparent"></div>
+              <div class="material-label">Transparent</div>
+            </div>
+            <div class="material-option" data-material="glitter">
+              <div class="material-icon material-glitter"></div>
+              <div class="material-label">Glitter</div>
+            </div>
+            <div class="material-option" data-material="mirror">
+              <div class="material-icon material-mirror"></div>
+              <div class="material-label">Mirror</div>
+            </div>
+            <div class="material-option" data-material="pixie">
+              <div class="material-icon material-pixie"></div>
+              <div class="material-label">Pixie Dust</div>
+            </div>
+          </div>
+          
+          <h4 class="shape-title" style="margin-top: 30px;">Finish</h4>
+          <select class="finish-select" id="finish-select">
+            <option value="glossy">Glossy</option>
+            <option value="matte">Matte</option>
+            <option value="satin">Satin</option>
+          </select>
+        </div>
+        
+        <!-- Size Column -->
+        <div class="size-column">
+          <h3>Size, inch (W×H)</h3>
+          <table class="size-quantity-table">
+            <tbody>
+              <tr data-size="2x2">
+                <td>2" × 2"</td>
+              </tr>
+              <tr data-size="3x3" class="selected">
+                <td>3" × 3"</td>
+              </tr>
+              <tr data-size="4x4">
+                <td>4" × 4"</td>
+              </tr>
+              <tr data-size="5x5">
+                <td>5" × 5"</td>
+              </tr>
+              <tr data-size="6x6">
+                <td>6" × 6"</td>
+              </tr>
+              <tr data-size="7x7">
+                <td>7" × 7"</td>
+              </tr>
+              <tr data-size="8x8">
+                <td>8" × 8"</td>
+              </tr>
+              <tr data-size="9x9">
+                <td>9" × 9"</td>
+              </tr>
+              <tr data-size="10x10">
+                <td>10" × 10"</td>
+              </tr>
+              <tr data-size="custom" class="custom-row">
+                <td>Custom size</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Quantity Column -->
+        <div class="quantity-column">
+          <h3>Quantity</h3>
+          <table class="size-quantity-table">
+            <tbody>
+              <tr data-quantity="55" data-price="26">
+                <td>55 pcs</td>
+                <td>$26</td>
+                <td></td>
+              </tr>
+              <tr data-quantity="100" data-price="47" class="selected">
+                <td>100 pcs</td>
+                <td>$47</td>
+                <td></td>
+              </tr>
+              <tr data-quantity="200" data-price="64">
+                <td>200 pcs</td>
+                <td>$64</td>
+                <td>-32%</td>
+              </tr>
+              <tr data-quantity="300" data-price="96">
+                <td>300 pcs</td>
+                <td>$96</td>
+                <td>-32%</td>
+              </tr>
+              <tr data-quantity="500" data-price="114">
+                <td>500 pcs</td>
+                <td>$114</td>
+                <td>-52%</td>
+              </tr>
+              <tr data-quantity="600" data-price="136">
+                <td>600 pcs</td>
+                <td>$136</td>
+                <td>-52%</td>
+              </tr>
+              <tr data-quantity="900" data-price="175">
+                <td>900 pcs</td>
+                <td>$175</td>
+                <td>-59%</td>
+              </tr>
+              <tr data-quantity="1200" data-price="201">
+                <td>1200 pcs</td>
+                <td>$201</td>
+                <td>-65%</td>
+              </tr>
+              <tr data-quantity="1500" data-price="252">
+                <td>1500 pcs</td>
+                <td>$252</td>
+                <td>-65%</td>
+              </tr>
+              <tr data-quantity="custom" class="custom-row">
+                <td>Custom quantity</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Upload Section -->
+        <div class="upload-section">
+          <button class="upload-button" id="upload-file-btn">Upload file</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Interactive functionality for the customizer
+    document.addEventListener('DOMContentLoaded', function() {
+      // Shape selection
+      const shapeOptions = document.querySelectorAll('.shape-option');
+      shapeOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          shapeOptions.forEach(opt => opt.classList.remove('selected'));
+          this.classList.add('selected');
+          this.querySelector('input[type="radio"]').checked = true;
+        });
+      });
+      
+      // Material selection
+      const materialOptions = document.querySelectorAll('.material-option');
+      materialOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          materialOptions.forEach(opt => opt.classList.remove('selected'));
+          this.classList.add('selected');
+        });
+      });
+      
+      // Size selection
+      const sizeRows = document.querySelectorAll('.size-column .size-quantity-table tr');
+      sizeRows.forEach(row => {
+        row.addEventListener('click', function() {
+          sizeRows.forEach(r => r.classList.remove('selected'));
+          this.classList.add('selected');
+        });
+      });
+      
+      // Quantity selection  
+      const quantityRows = document.querySelectorAll('.quantity-column .size-quantity-table tr');
+      quantityRows.forEach(row => {
+        row.addEventListener('click', function() {
+          quantityRows.forEach(r => r.classList.remove('selected'));
+          this.classList.add('selected');
+        });
+      });
+      
+      // Upload button functionality
+      const uploadBtn = document.getElementById('upload-file-btn');
+      uploadBtn.addEventListener('click', function() {
+        // Get selected values
+        const product = document.getElementById('product-select').value;
+        const shape = document.querySelector('input[name="shape"]:checked').value;
+        const material = document.querySelector('.material-option.selected').dataset.material;
+        const finish = document.getElementById('finish-select').value;
+        const size = document.querySelector('.size-column .size-quantity-table tr.selected').dataset.size;
+        const quantityRow = document.querySelector('.quantity-column .size-quantity-table tr.selected');
+        const quantity = quantityRow.dataset.quantity;
+        const price = quantityRow.dataset.price;
+        
+        // Create form data
+        const params = new URLSearchParams({
+          productid: product,
+          productname: document.getElementById('product-select').selectedOptions[0].text,
+          shape: shape,
+          material: material,
+          finish: finish,
+          size: size,
+          quantity: quantity,
+          price: price
+        });
+        
+        // Redirect to customizer
+        window.location.href = '/customizer.html?' + params.toString();
+      });
+    });
+  </script>
+</div>

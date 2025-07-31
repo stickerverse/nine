@@ -1,0 +1,386 @@
+/* Firebase Sticker Customizer Styles */
+.sticker-customizer-firebase-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 1200px;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background-color: #f9f9f9;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.sticker-customizer-firebase-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* Ensure the customizer container fits properly in the product layout */
+.product-page-with-customizer .product__media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+  .sticker-customizer-firebase-container {
+    height: 900px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sticker-customizer-firebase-container {
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sticker-customizer-firebase-container {
+    height: 700px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sticker-customizer-firebase-container {
+    height: 600px;
+  }
+}
+
+/* Styles for product pages with customizer */
+.product-page-with-customizer .product__media {
+  margin-bottom: 30px;
+}
+
+.has-sticker-customizer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+
+.has-sticker-customizer .product__media {
+  flex: 1;
+  min-height: 400px;
+}
+
+/* Make sure thumbnails are hidden when customizer is active */
+.has-sticker-customizer .product__thumbnail-list {
+  display: none;
+}
+
+/* Hide other elements that might interfere with the expanded customizer */
+.product-page-with-customizer .product__thumbnail-list,
+.product-page-with-customizer .product__zoom-button {
+  display: none !important;
+}
+
+/* Ensure proper aspect ratio and positioning */
+.product__media .sticker-customizer-firebase-container {
+  aspect-ratio: 1/1;
+  min-height: 400px;
+}
+
+/* Custom responsive adjustments */
+@media screen and (max-width: 990px) {
+  .product__media .sticker-customizer-firebase-container {
+    min-height: 350px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .product__media .sticker-customizer-firebase-container {
+    min-height: 300px;
+  }
+}
+
+.sticker-customizer-loading {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1200px;
+  width: 100%;
+  background-color: #f9f9f9;
+  z-index: 5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.sticker-customizer-loading__spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-right: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sticker-customizer-loading__text {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Message styling for communication between iframe and parent */
+.sticker-customizer-message {
+  padding: 12px 16px;
+  background-color: #f0f8ff;
+  border-left: 4px solid #4a90e2;
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+.sticker-customizer-message--success {
+  background-color: #f0fff4;
+  border-left-color: #48bb78;
+}
+
+.sticker-customizer-message--error {
+  background-color: #fff5f5;
+  border-left-color: #f56565;
+}
+
+/* Ensure customizer takes up more space in the layout */
+.product-page-with-customizer .product__media {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Custom adjustments for specific page layouts */
+@media screen and (min-width: 1200px) {
+  .product-page-with-customizer .container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+  
+  .sticker-customizer-firebase-container {
+    height: 800px;
+  }
+  
+  .sticker-customizer-loading {
+    height: 800px;
+  }
+}
+
+/* Keep container within normal bounds */
+.product-page-with-customizer .container {
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+/* Expand the product section */
+.product-page-with-customizer .product {
+  display: block;
+  max-width: 100%;
+}
+
+/* Keep customizer section within container bounds */
+.shopify-section--main-product {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Further enlarge desktop view */
+@media screen and (min-width: 1200px) {
+  .sticker-customizer-firebase-container {
+    height: 1000px !important;
+  }
+  
+  .sticker-customizer-loading {
+    height: 1000px !important;
+  }
+  
+  .product-page-with-customizer .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* Ensure proper container sizing */
+.sticker-customizer-firebase-container {
+  height: 1200px !important;
+  margin: 0 auto !important;
+  margin-bottom: 20px !important;
+  border-radius: 8px !important;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sticker-customizer-loading {
+  height: 1200px !important;
+}
+
+/* Hide everything unnecessary and maximize the customizer space */
+body.product-page-with-customizer {
+  overflow-x: hidden;
+}
+
+/* Remove padding for full-screen effect */
+@media screen and (min-width: 1400px) {
+  .sticker-customizer-firebase-container {
+    height: 1400px !important;
+  }
+  
+  .sticker-customizer-loading {
+    height: 1400px !important;
+  }
+}
+
+/* Hide sidebar elements on larger screens for more space */
+@media screen and (min-width: 992px) {
+  .product-page-with-customizer .product__info-wrapper {
+    padding-top: 20px;
+  }
+}
+
+/* Position the customizer closer to the header */
+.shopify-section--main-product {
+  margin-top: -50px;
+}
+
+/* Ensure the main container has no top padding */
+.product-page-with-customizer {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* New styles to ensure minimum space between header and customizer */
+.header-container + .shopify-section--main-product {
+  padding-top: 0 !important;
+  margin-top: -50px !important;
+}
+
+/* Ensure the page content wrapper has no top margin */
+.page-content-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Remove extra space above product container */
+.product-page-with-customizer .product {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin-top: -30px !important; 
+  padding-top: 0 !important;
+}
+
+/* Hide breadcrumb if it's taking up too much space */
+.shopify-section--breadcrumb {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  height: 0 !important;
+  overflow: hidden;
+}
+
+/* Reduce any extra space at the top of the page */
+.main {
+  padding-top: 0 !important;
+}
+
+/* Apply specific styling to the main product section */
+#shopify-section-template--19370584834286__main {
+  padding-top: 0 !important;
+  margin-top: -40px !important;
+}
+
+/* Ensure the main container for all product pages has minimal spacing */
+.shopify-section--main-product {
+  padding-top: 0 !important;
+  margin-top: -50px !important;
+}
+
+/* Ensure the main element has no top padding */
+#main {
+  padding-top: 0 !important;
+  margin-top: -10px !important;
+}
+
+/* Ensure the anchor class doesn't add extra spacing */
+.anchor {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Hide any unnecessary elements that might be taking up space */
+.breadcrumb-container, 
+.page-header, 
+.product__badge-list,
+.shopify-section--breadcrumb {
+  height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Fix layout cut-off issues by ensuring proper containment */
+.has-sticker-customizer {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.has-sticker-customizer .product__media {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure iframe doesn't exceed container */
+.sticker-customizer-firebase-container iframe {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Force container boundaries on problematic pages */
+body.product-page-with-customizer {
+  overflow-x: hidden;
+}
+
+.product-page-with-customizer * {
+  box-sizing: border-box;
+}
+
+/* Specific fixes for QR code and holographic pages */
+.sticker-customizer-firebase-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Stickerine</title>
+    <link rel="stylesheet" href="assets/auth-styles.css">
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/header-navigation.css">
+  </head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <img src="assets/stickerverse-logo.png" alt="Stickerverse Logo" class="auth-logo">
+                <h1>Create Account</h1>
+            </div>
+            
+            <div class="auth-form">
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </div>
+                </form>
+                
+                <div class="auth-separator">
+                    <span>or</span>
+                </div>
+                
+                <div class="social-signin">
+                    <button id="google-signin" class="btn btn-social btn-google">
+                        <img src="assets/google-logo.png" alt="Google">
+                        Sign up with Google
+                    </button>
+                </div>
+                
+                <div class="auth-links">
+                    <a href="login.html">Already have an account? Sign In</a>
+                </div>
+            </div>
+            
+            <div id="auth-message" class="auth-message"></div>
+        </div>
+    </div>
+    
+    <!-- Auth Script -->
+    <script src="assets/firebase-auth.js"></script>
+  <script src="assets/header-navigation.js"></script>
+  </body>
+</html>

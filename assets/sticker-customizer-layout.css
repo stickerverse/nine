@@ -1,0 +1,179 @@
+/* Sticker Customizer Layout */
+.sticker-customizer {
+  margin: 30px 0;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sticker-customizer__title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+
+.sticker-customizer__layout {
+  display: flex;
+  gap: 30px;
+}
+
+.sticker-customizer__preview-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sticker-customizer__options-column {
+  flex: 1.2;
+}
+
+.sticker-customizer__preview {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 300px;
+}
+
+.sticker-customizer__upload-area {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sticker-customizer__upload-area:hover {
+  border-color: #ccc;
+  background-color: #fafafa;
+}
+
+.upload-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.upload-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sticker-preview-image {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.sticker-preview-image.has-image {
+  margin: 10px 0;
+}
+
+.uploaded-filename {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+  word-break: break-all;
+  max-width: 100%;
+}
+
+.sticker-outline-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.7;
+}
+
+.sticker-customizer__upload-button {
+  margin-top: 15px;
+  align-self: center;
+}
+
+.sticker-customizer__control-group {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sticker-customizer__control-group:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sticker-customizer__control-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.sticker-customizer__price-display {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.price-per-sticker {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  margin-top: 5px;
+}
+
+.sticker-customizer__add-button {
+  font-weight: 600;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .sticker-customizer__layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .sticker-customizer__preview-column,
+  .sticker-customizer__options-column {
+    width: 100%;
+  }
+  
+  .sticker-customizer__preview {
+    min-height: 250px;
+  }
+  
+  .sticker-customizer__upload-area {
+    min-height: 200px;
+  }
+  
+  .sticker-customizer__radio-list {
+    flex-wrap: wrap;
+  }
+}

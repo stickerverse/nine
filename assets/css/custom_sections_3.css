@@ -1,0 +1,16 @@
+#fw-section-header {
+
+@media (min-width: 640px) {
+    .header__grid {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+  .header--top-center .header__nav {
+        padding-top: 0;
+        margin-top: 0;
+        line-height: 1;
+
+    }
+  
+}
+}

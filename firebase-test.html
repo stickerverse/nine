@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #2b5876;
+    }
+    .container {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #2b5876, #4e4376);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    .success {
+      background-color: #e7f7ed;
+      color: #28a745;
+      border-left: 4px solid #28a745;
+    }
+    .error {
+      background-color: #f8e7e7;
+      color: #dc3545;
+      border-left: 4px solid #dc3545;
+    }
+    .loading {
+      background-color: #e7f1f8;
+      color: #0066cc;
+      border-left: 4px solid #0066cc;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+    .tab.active {
+      border-color: #2b5876;
+      color: #2b5876;
+      font-weight: 500;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Firebase Integration Test</h1>
+    <p>This page tests the Firebase SDK integration for Stickerine.com</p>
+    
+    <div class="tabs">
+      <div class="tab active" data-tab="cdn">CDN Approach (Recommended)</div>
+      <div class="tab" data-tab="module">ES Module Approach</div>
+    </div>
+    
+    <div class="tab-content active" id="cdn-tab">
+      <h2>1. Firebase Core SDK Test</h2>
+      <button id="test-firebase-core" class="btn">Test Firebase Core</button>
+      <div id="firebase-core-status" class="status"></div>
+      
+      <h2>2. Firebase Authentication Test</h2>
+      <div>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="register-btn" class="btn">Register</button>
+        <button id="login-btn" class="btn">Login</button>
+        <button id="logout-btn" class="btn">Logout</button>
+      </div>
+      <div id="auth-status" class="status"></div>
+      
+      <h2>3. Firebase Firestore Test</h2>
+      <button id="test-firestore" class="btn">Test Firestore</button>
+      <div id="firestore-status" class="status"></div>
+      
+      <h2>4. Firebase Storage Test</h2>
+      <input type="file" id="file-upload">
+      <button id="upload-btn" class="btn">Upload File</button>
+      <div id="storage-status" class="status"></div>
+    </div>
+    
+    <div class="tab-content" id="module-tab">
+      <h2>ES Module Integration</h2>
+      <p>This approach uses ES modules, which offers better tree-shaking and code splitting. It's recommended for modern applications.</p>
+      <button id="test-module" class="btn">Test Module Integration</button>
+      <div id="module-status" class="status"></div>
+    </div>
+  </div>
+  
+  <!-- Firebase CDN Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage-compat.js"></script>
+  
+  <!-- Firebase initialization script -->
+  <script src="assets/firebase-init.js"></script>
+  
+  <!-- Test script for CDN approach -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab switching logic
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const tabId = tab.getAttribute('data-tab');
+          
+          // Update active tab
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          
+          // Update active content
+          tabContents.forEach(content => content.classList.remove('active'));
+          document.getElementById(`${tabId}-tab`).classList.add('active');
+        });
+      });
+      
+      // Helper function to update status
+      function updateStatus(elementId, message, type) {
+        const statusElement = document.getElementById(elementId);
+        statusElement.textContent = message;
+        statusElement.className = 'status ' + type;
+      }
+      
+      // 1. Test Firebase Core
+      document.getElementById('test-firebase-core').addEventListener('click', async () => {
+        try {
+          updateStatus('firebase-core-status', 'Testing Firebase Core...', 'loading');
+          
+          if (window.firebase && window.firebaseApp) {
+            updateStatus('firebase-core-status', 'Firebase Core SDK initialized successfully!', 'success');
+          } else {
+            await initializeFirebase();
+            updateStatus('firebase-core-status', 'Firebase Core SDK initialized successfully!', 'success');
+          }
+        } catch (error) {
+          updateStatus('firebase-core-status', `Error: ${error.message}`, 'error');
+        }
+      });
+      
+      // 2. Authentication Tests
+      document.getElementById('register-btn').addEventListener('click', async () => {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        if (!email || !password) {
+          updateStatus('auth-status', 'Please enter both email and password', 'error');
+          return;
+        }
+        
+        try {
+          updateStatus('auth-status', 'Creating user account...', 'loading');
+          
+          if (!window.firebaseAuth) {
+            await initializeFirebase();
+          }
+          
+          await window.firebaseAuth.createUserWithEmailAndPassword(email, password);
+          updateStatus('auth-status', 'User registered successfully!', 'success');
+        } catch (error) {
+          updateStatus('auth-status', `Error: ${error.message}`, 'error');
+        }
+      });
+      
+      document.getElementById('login-btn').addEventListener('click', async () => {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        if (!email || !password) {
+          updateStatus('auth-status', 'Please enter both email and password', 'error');
+          return;
+        }
+        
+        try {
+          updateStatus('auth-status', 'Logging in...', 'loading');
+          
+          if (!window.firebaseAuth) {
+            await initializeFirebase();
+          }
+          
+          await window.firebaseAuth.signInWithEmailAndPassword(email, password);
+          updateStatus('auth-status', 'User logged in successfully!', 'success');
+        } catch (error) {
+          updateStatus('auth-status', `Error: ${error.message}`, 'error');
+        }
+      });
+      
+      document.getElementById('logout-btn').addEventListener('click', async () => {
+        try {
+          updateStatus('auth-status', 'Logging out...', 'loading');
+          
+          if (!window.firebaseAuth) {
+            await initializeFirebase();
+          }
+          
+          await window.firebaseAuth.signOut();
+          updateStatus('auth-status', 'User logged out successfully!', 'success');
+        } catch (error) {
+          updateStatus('auth-status', `Error: ${error.message}`, 'error');
+        }
+      });
+      
+      // Monitor auth state
+      document.addEventListener('firebaseAuthStateChanged', (event) => {
+        const user = event.detail.user;
+        if (user) {
+          updateStatus('auth-status', `Logged in as: ${user.email}`, 'success');
+        } else {
+          updateStatus('auth-status', 'Not logged in', 'loading');
+        }
+      });
+      
+      // 3. Firestore Test
+      document.getElementById('test-firestore').addEventListener('click', async () => {
+        try {
+          updateStatus('firestore-status', 'Testing Firestore...', 'loading');
+          
+          if (!window.firebaseDb) {
+            await initializeFirebase();
+          }
+          
+          // Add a test document
+          const testCollection = window.firebaseDb.collection("firebase_test");
+          await testCollection.add({
+            timestamp: new Date(),
+            message: "Firebase Firestore test successful!",
+            testType: "CDN approach"
+          });
+          
+          // Retrieve documents
+          const querySnapshot = await testCollection.get();
+          let docs = [];
+          querySnapshot.forEach((doc) => {
+            docs.push({ id: doc.id, ...doc.data() });
+          });
+          
+          updateStatus('firestore-status', `Firestore working! Found ${docs.length} test documents.`, 'success');
+        } catch (error) {
+          updateStatus('firestore-status', `Error: ${error.message}`, 'error');
+        }
+      });
+      
+      // 4. Storage Test
+      document.getElementById('upload-btn').addEventListener('click', async () => {
+        const fileInput = document.getElementById('file-upload');
+        const file = fileInput.files[0];
+        
+        if (!file) {
+          updateStatus('storage-status', 'Please select a file first', 'error');
+          return;
+        }
+        
+        try {
+          updateStatus('storage-status', 'Uploading file...', 'loading');
+          
+          if (!window.firebaseStorage) {
+            await initializeFirebase();
+          }
+          
+          const storageRef = window.firebaseStorage.ref('test-uploads/' + file.name);
+          const uploadTask = await storageRef.put(file);
+          const downloadURL = await storageRef.getDownloadURL();
+          
+          updateStatus('storage-status', `File uploaded successfully! URL: ${downloadURL}`, 'success');
+        } catch (error) {
+          updateStatus('storage-status', `Error: ${error.message}`, 'error');
+        }
+      });
+    });
+  </script>
+  
+  <!-- ES Module approach test -->
+  <script type="module">
+    import firebaseApp from './assets/firebase-module.js';
+    
+    document.getElementById('test-module').addEventListener('click', async () => {
+      try {
+        const statusElement = document.getElementById('module-status');
+        statusElement.textContent = 'Testing module integration...';
+        statusElement.className = 'status loading';
+        
+        // Initialize Firebase
+        firebaseApp.initialize();
+        
+        // Get services
+        const auth = firebaseApp.getAuth();
+        const db = firebaseApp.getDb();
+        
+        // Test Firestore
+        const testCollection = db.collection("firebase_test");
+        await testCollection.add({
+          timestamp: new Date(),
+          message: "Firebase module integration test successful!",
+          testType: "ES Module approach"
+        });
+        
+        statusElement.textContent = 'ES Module integration working correctly!';
+        statusElement.className = 'status success';
+      } catch (error) {
+        const statusElement = document.getElementById('module-status');
+        statusElement.textContent = `Error: ${error.message}`;
+        statusElement.className = 'status error';
+      }
+    });
+  </script>
+</body>
+</html>

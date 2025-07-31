@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../Desktop/timed-card-carousel-slider-using-html-css-and-javascript"
+	},
+	{
+		"path": "../../cloned-site/css"
+	},
+	{
+		"path": "../../cloned-site/js"
+	}
+],
+  "settings": {
+    "liveServer.settings.port": 5501
+  }
+}
